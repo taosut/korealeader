@@ -1,11 +1,20 @@
 body {
-    font-family: "Helvetica Neue",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji"
+    font-family: "Helvetica Neue",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+    color: $main;
+}
+
+.font {
+    @each $name, $hex in $theme-default-colors {
+        &-#{$name} {
+            color: $hex;
+        }
+    }
 }
 svg {
     fill: currentColor;
 }
 .navbar {
-    background-color: map-get($theme-colors, main);
+    background-color: $main;
     padding: 0;
     font-family: "SFU Helvetica", "Helvetica Neue", sans-serif;
     letter-spacing: .05rem;
@@ -13,32 +22,35 @@ svg {
     text-transform: uppercase;
     font-size: 20px;
     .navbar-brand {
-        background-color: map-get($theme-colors, white);
+        background-color: $white;
         padding: .5rem 1rem;
         margin-right: 0;
     }
     .nav-link,
     &.navbar-expand-lg .nav-link{
-        color: map-get($theme-colors, white);
+        color: $white;
         padding: 1rem 1rem;
         &:hover, &:active {
-            background-color: map-get($theme-colors, white);
-            color: map-get($theme-colors, main);
+            background-color: $white;
+            color: $main;
         }
     }
     .nav-phone,
     &.navbar-expand-lg .nav-phone {
-        background-color: map-get($theme-colors, orange);
+        background-color: $orange;
         padding: 1rem 1.5rem;
         &:hover, &:active {
-            background-color: map-get($theme-colors, orange-dark);
-            color: map-get($theme-colors, white);
-            fill: map-get($theme-colors, white);
+            background-color: $orange-dark;
+            color: $white;
+            fill: $white;
         }
     }
     .dropdown-item {
         padding: .75rem 1.5rem;
     }
+}
+.carousel-control-next, .carousel-control-prev {
+    width: 144px;
 }
 .carousel-control-next-icon, .carousel-control-prev-icon {
     width: 60px;
@@ -50,4 +62,288 @@ svg {
 .carousel-control-next-icon {
     background-image: url(../assets/icon-arrow.svg);
     transform: rotate(180deg)
+}
+
+.container-fluid {
+    @include media-breakpoint-up(xl) {
+        padding-left: 54px;
+        padding-right: 54px;
+    }
+}
+
+.title {
+    font-family: "SFU Helvetica", "Helvetica Neue", sans-serif;
+    font-size: 50px;
+    padding: 1.5rem 0;
+    text-align: center;
+}
+.services {
+    background: url(../assets/3-background.jpg);
+    background-size: 100%;
+    .card {
+        border: 0;
+        border-radius: 0;
+        background-color: transparent;
+        a {
+            color: $main;
+            text-decoration: none;
+            &:hover {
+                text-decoration: none;
+            }
+        }
+        &-img-top {
+            border-radius: 0;
+        }
+        &-title {
+            font-family: "SFU Helvetica", "Helvetica Neue", sans-serif;
+            font-size: 36px;
+            text-align: center;
+            @include media-breakpoint-down(xl) {
+                font-size: 32px;
+            }
+            span {
+                display: block;
+                font-size: 55%;
+                font-family: "Helvetica Neue", "SFU Helvetica", sans-serif;
+                text-transform: uppercase;
+                letter-spacing: .15rem;
+                font-weight: 400;
+            }
+            text-transform: capitalize;
+        }
+        &-purple {
+            span {
+                color: $purple;
+            }
+        }
+        &-blue {
+            span {
+                color: $blue;
+            }
+            .card-extra {
+                width: calc(300% + 60px);
+            }
+        }
+        &-green {
+            span {
+                color: $green;
+            }
+            .card-extra {
+                width: calc(300% + 60px);
+                padding-left: unset;
+                padding-right: 100%;
+                left: unset;
+                right: 15px;
+            }
+        }
+        &-orange {
+            span {
+                color: $orange;
+            }
+            .card-extra {
+                padding-left: unset;
+                padding-right: 100%;
+                left: unset;
+                right: 15px;
+            }
+        }
+        &-body {
+            height: 120px;
+        }
+        &:hover, &:active {
+            .card-extra {
+                display: flex;
+            }
+        }
+    }
+
+    .card-extra {
+        display: none;
+        position: absolute;
+        left: 15px;
+        top: 0;
+        height: calc(100% - 120px);
+        width: calc(400% + 90px);
+        padding-left: 100%;
+        z-index: 11;
+        text-align: center;
+        border: 1px solid $gray-100;
+        .card-extra-item {
+            margin: 0;
+            background-color: $white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            &:hover, &:active {
+                background-color: $gray-100;
+            }
+            .card-img {
+                max-width: 160px;
+                margin-bottom: 20px;
+                border-radius: 50%;
+            }
+            .card-text {
+                font-size: 20px;
+            }
+        }
+    }
+}
+
+.doctors {
+    &-carousel {
+        background: linear-gradient(90deg, $gray-300 35%, transparent 35%), linear-gradient(90deg, $gray-100 65%, $gray-100 65%);
+    }
+    .list-group {
+        &-item {
+            margin-top: 1rem;
+            padding: 1.75rem;
+            background: transparent;
+            color: $main;
+            border-radius: 10px;
+            border: 0;
+            &.active, &:active, &:hover {
+                background-color: $white;
+                box-shadow: 2px 5px 11px rgba(0, 36, 59, 0.25);
+                text-decoration: none;
+                img {
+                    border: 5px solid $blue
+                }
+            }
+            img {
+                background: $white;
+                border-radius: 50%;
+                border: 5px solid transparent;
+                max-width: 100%;
+            }
+            .media {
+                align-items: center;
+                &-body {
+                    h5 {
+                        font-family: "SFU Helvetica", "Helvetica Neue", sans-serif;
+                        font-size: 30px;
+                    }
+                    font-size: 16px;
+                    text-transform: capitalize;
+                    font-weight: 400;
+                }
+            }
+        }
+    }
+    .block {
+        padding: 2rem 3.25rem;
+        font-size: 20px;
+        font-weight: 300;
+        .title {
+            line-height: 1.5;
+            span {
+                display: block;
+                font-size: 55%;
+                font-family: "Helvetica Neue", "SFU Helvetica", sans-serif;
+                text-transform: capitalize;
+                font-weight: 400;
+                color: $main;
+            }
+        }
+    }
+}
+
+.carousel-indicators {
+    li {
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        background: $blue;
+        border: 0;
+        opacity: .3;
+    }
+    .acitve {
+        opacity: .3;
+        width: 29px;
+        border-radius: 10px;
+    }
+}
+.carousel-indicators .active {
+    opacity: .3;
+    width: 29px;
+    border-radius: 10px;
+}
+
+.news {
+    .carousel-item {
+        .card {
+            .card-text {
+                position: absolute;
+                bottom: 0;
+                height: 70px;
+                padding: .75rem 2rem;
+                color: $white;
+                font-weight: bold;
+            }
+        }
+    }
+    .more {
+        padding: 2.5rem;
+        .btn {
+            min-width: 210px;
+            border-color: $indigo-light;
+            color: $main;
+            opacity: .5;
+            font-size: 20px;
+            font-weight: bold;
+            border-radius: 40px;
+            padding: .75rem 1.25rem;
+        }
+    }
+}
+
+.list-unstyled {
+    padding-left: 0;
+    list-style: none; 
+}
+.list-inline {
+    padding-left: 0;
+    list-style: none; 
+  
+    &-item {
+        display: inline-block; 
+        &:not(:last-child) {
+            margin-right: 0.5rem;
+        }
+    }
+}
+
+.footer {
+    color: $indigo-light;
+    a {
+        color: $indigo-light;
+        &:hover, &:active {
+            color: $indigo-light;
+            text-decoration: none;
+        }
+    }
+    .title {
+        text-align: left;
+        font-size: 30px;
+        padding-top: 0;
+    }
+    .top {
+        padding: 3.5rem 0;
+        .header {
+            height: 60px;
+            margin-bottom: 1rem;
+        }
+        background-color: $gray-200;
+    }
+    .bottom {
+        background-color: $white;
+        padding: .75rem 0;
+        .container-fluid {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .list-inline {
+            margin-bottom: 0;
+        }
+    }
 }

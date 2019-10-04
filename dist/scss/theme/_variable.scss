@@ -1,9 +1,19 @@
-$theme-colors: (
+$main: #00243B !default;
+$orange: #F36E2E !default;
+$orange-dark: #e26328 !default;
+$green: #9FC54B !default;
+$blue: #4F8ECB !default;
+$purple: #9460A8 !default;
+$white: #ffffff !default;
+$indigo-light: #6E808B;
+$indigo-lighter: #CBD2D7;
+$theme-default-colors: (
     main: #00243B,
     orange: #F36E2E,
     orange-dark: #e26328,
     green: #9FC54B,
     blue: #4F8ECB,
     purple: #9460A8,
-    white: #ffffff
+    white: #ffffff,
+    indigo-light: $indigo-light
 ) !default;
