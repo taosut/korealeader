@@ -52,18 +52,31 @@ svg {
 .carousel-control-next, .carousel-control-prev {
     width: 144px;
 }
-.carousel-control-next-icon, .carousel-control-prev-icon {
+.carousel-control-next-icon, .carousel-control-prev-icon, .slick-prev, .slick-next {
     width: 60px;
     height: 60px;
 }
-.carousel-control-prev-icon {
+.carousel-control-prev-icon, .slick-prev {
     background-image: url(../assets/icon-arrow.svg);
+    background-size: contain;
 }
-.carousel-control-next-icon {
+.carousel-control-next-icon, .slick-next  {
     background-image: url(../assets/icon-arrow.svg);
+    background-size: contain;
     transform: rotate(180deg)
 }
-
+.slick-prev {
+    left: 84px;
+    &::before {
+        content: ""
+    }
+}
+.slick-next {
+    right: 84px;
+    &::before {
+        content: ""
+    }
+}
 .container-fluid {
     @include media-breakpoint-up(xl) {
         padding-left: 54px;
@@ -74,7 +87,7 @@ svg {
 .title {
     font-family: "SFU Helvetica", "Helvetica Neue", sans-serif;
     font-size: 50px;
-    padding: 1.5rem 0;
+    padding: 2.5rem 0;
     text-align: center;
 }
 .services {
@@ -195,7 +208,7 @@ svg {
     }
     .list-group {
         &-item {
-            margin-top: 1rem;
+            margin: 1rem 0;
             padding: 1.75rem;
             background: transparent;
             color: $main;
@@ -229,21 +242,39 @@ svg {
             }
         }
     }
-    .block {
-        padding: 2rem 3.25rem;
-        font-size: 20px;
-        font-weight: 300;
-        .title {
-            line-height: 1.5;
-            span {
-                display: block;
-                font-size: 55%;
-                font-family: "Helvetica Neue", "SFU Helvetica", sans-serif;
-                text-transform: capitalize;
-                font-weight: 400;
-                color: $main;
-            }
+}
+
+.block {
+    padding: 2rem 3.25rem;
+    font-size: 20px;
+    font-weight: 300;
+    .title {
+        line-height: 1.5;
+        padding-bottom: .75rem;
+        span {
+            display: block;
+            font-size: 55%;
+            font-family: "Helvetica Neue", "SFU Helvetica", sans-serif;
+            text-transform: capitalize;
+            font-weight: 400;
+            color: $main;
         }
+    }
+    .action {
+        padding: 1rem 0;
+        .btn {
+            min-width: 190px;
+        }
+    }
+}
+.btn-orange {
+    color: $white;
+    background-color: $orange;
+    padding: .75rem;
+    font-weight: bold;
+    &:hover, &:active {
+        color: $white;
+        background-color: $orange-dark;
     }
 }
 
@@ -268,16 +299,49 @@ svg {
     border-radius: 10px;
 }
 
+.story {
+    &-carousel {
+        background: url(../assets/10-background.jpg) no-repeat center top;
+        background-size: 100%;
+    }
+    .card-deck {
+        margin: 0;
+        position: relative;
+        .card {
+            margin: 0;
+            padding: 0;
+            border: 10px solid $white;
+            opacity: .7;
+            border-radius: 0;
+            &.active {
+                border: 10px solid $orange;
+                opacity: 1;
+            }
+        }
+    }
+    .carousel-control-next-icon,
+    .carousel-control-prev-icon {
+        margin-top: -280px;
+    }
+}
+
 .news {
     .carousel-item {
         .card {
+            border: 0;
+            border-radius: 0;
+            &-img-top {
+                border-radius: 0;
+            }
             .card-text {
                 position: absolute;
                 bottom: 0;
+                width: 100%;
                 height: 70px;
-                padding: .75rem 2rem;
+                padding: .75rem 1rem;
                 color: $white;
                 font-weight: bold;
+                background: linear-gradient(90deg, transparent 0%, rgba(0,0,0,.3) 70%);
             }
         }
     }
@@ -292,8 +356,151 @@ svg {
             font-weight: bold;
             border-radius: 40px;
             padding: .75rem 1.25rem;
+            &:hover, &:active {
+                background-color: $indigo-light;
+            }
         }
     }
+}
+
+.comparision {
+    .carousel {
+        margin-bottom: 80px;
+        &-control-next, &-control-prev {
+            top: unset;
+            bottom: -70px;
+            width: 60px;
+        }
+        &-control-next {
+            right: calc(50% - 70px);
+        }
+        &-control-prev {
+            left: calc(50% - 70px);
+        }
+        &-text {
+            font-family: "SFU Helvetica", "Helvetica Neue", sans-serif;
+            font-size: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 75px;
+            background-color: rgba(242, 242, 242, .8);
+        }
+    }
+}
+
+.contact {
+    position: relative;
+    background:
+        url(../assets/8-background.png) no-repeat center bottom,
+        url(../assets/lady.png) no-repeat right 8rem bottom 300px,
+        linear-gradient(180deg, $white 3%, $blue-light 97%);
+    background-size: 100%, 400px, 100%;
+    padding: 2rem 0 8rem;
+    @include media-breakpoint-down(xl) {
+        background:
+            url(../assets/8-background.png) no-repeat center bottom,
+            url(../assets/lady.png) no-repeat right 8rem bottom 200px,
+            linear-gradient(180deg, $white 3%, $blue-light 97%);
+        background-size: 100%, 400px, 100%;
+    }
+    &-footer {
+        margin-top: -300px;
+        position: relative;
+        z-index: 10;
+    }
+    &-image {
+        position: absolute;
+        right: 8rem;
+        width: 400px;
+        bottom: 300px;
+        z-index: 9;
+        @include media-breakpoint-down(xl) {
+            bottom: 200px;
+        }
+    }
+    .card {
+        z-index: 20;
+        &-info {
+            position: absolute;
+            top: 2rem;
+            width: 450px;
+            left: calc(50% - 225px);
+            text-align: center;
+            background: transparent;
+            border: 0;
+            font-size: 20px;
+
+            .card-body {
+                padding-bottom: 0
+            }
+
+            .card-footer {
+                background: transparent;
+                border: 0;
+                &::before {
+                    content: '';
+                    width: 80%;
+                    display: inline-block;
+                    border: 1px solid $gray;
+                }
+            }
+            .card-title {
+                font-size: 24px;
+                font-weight: 400;
+                line-height: 1.5;
+                margin: 1.5rem 0 1rem;
+            }
+            .badge {
+                background-color: $main;
+                color: $white;
+            }
+        }
+
+        &-form {
+            width: 400px;
+            background: url(../assets/9-background.jpg) no-repeat top center;
+            background-size: 100%;
+            border: 0;
+            box-shadow: 2px 2px 15px rgba($color: $main, $alpha: .15);
+            margin-left: 8rem;
+            @include media-breakpoint-down(xl) {
+                margin-left: 0;
+            }
+            .title {
+                padding: 0;
+                color: $blue;
+                text-transform: uppercase;
+            }
+            p {
+                text-align: center
+            }
+            label {
+                font-weight: bold;
+            }
+            .form-control {
+                border-color: #BDD1E4;
+            }
+            .btn {
+                color: $white;
+                background-color: $orange;
+                padding: 1.05rem;
+                width: 100%;
+                text-transform: uppercase;
+                font-weight: bold;
+            }
+            .card-body {
+                padding: 1.25rem 2.25rem;
+            }
+        }
+    }
+}
+
+::placeholder {
+    color: rgba($color: #000000, $alpha: .21)!important;
 }
 
 .list-unstyled {

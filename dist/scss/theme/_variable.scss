@@ -3,17 +3,30 @@ $orange: #F36E2E !default;
 $orange-dark: #e26328 !default;
 $green: #9FC54B !default;
 $blue: #4F8ECB !default;
+$blue-light: #D2E5F9 !default;
 $purple: #9460A8 !default;
 $white: #ffffff !default;
 $indigo-light: #6E808B;
 $indigo-lighter: #CBD2D7;
+$gray: #CAD0D8;
 $theme-default-colors: (
-    main: #00243B,
-    orange: #F36E2E,
-    orange-dark: #e26328,
-    green: #9FC54B,
-    blue: #4F8ECB,
-    purple: #9460A8,
-    white: #ffffff,
-    indigo-light: $indigo-light
+    main: $main,
+    orange: $orange,
+    orange-dark: $orange-dark,
+    green: $green,
+    blue: $blue,
+    blue-light: $blue-light,
+    purple: $purple,
+    white: $white,
+    indigo-light: $indigo-light,
+    indigo-lighter: $indigo-lighter
+) !default;
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1620px
 ) !default;
