@@ -24,11 +24,15 @@ svg {
     line-height: 1.2;
     text-transform: uppercase;
     font-size: 20px;
-    @include media-breakpoint-between(lg, xxl) {
+    @include media-breakpoint-between(lg, xl) {
         font-size: 16px;
     }
     @include media-breakpoint-between(lg, xl) {
         padding-top: 55px;
+    }
+    .dropdown-menu {
+        border-radius: 0;
+        margin-top: 0;
     }
     .navbar-brand {
         background-color: $white;
@@ -45,6 +49,11 @@ svg {
         @include media-breakpoint-down(md) {
             background-color: $main;
             color: $white;
+        }
+        svg, img {
+            @include media-breakpoint-down(sm) {
+                width: 150px;
+            }
         }
     }
     .nav-link,
@@ -72,6 +81,12 @@ svg {
         }
         @include media-breakpoint-down(md) {
             background-color: transparent;
+            padding: 1rem .75rem;
+        }
+        span {
+            @include media-breakpoint-down(sm) {
+                display: none;
+            }
         }
         &:hover, &:active {
             background-color: $orange-dark;
@@ -199,7 +214,7 @@ svg {
         border: 0;
         border-radius: 0;
         background-color: transparent;
-        @include media-breakpoint-down(md) {
+        @include media-breakpoint-between(md, lg) {
             flex: 0 0 50%;
             max-width: 50%;
             margin: 0;
@@ -417,6 +432,9 @@ svg {
 .doctors {
     &-carousel {
         background: linear-gradient(90deg, $gray-300 35%, transparent 35%), linear-gradient(90deg, $gray-100 65%, $gray-100 65%);
+        @include media-breakpoint-down(sm) {
+            background: $gray-300;
+        }
     }
     .list-group {
         &-item {
@@ -487,6 +505,9 @@ svg {
                     opacity: 1;
                 }
             }
+            @include media-breakpoint-down(sm) {
+                display: none;
+            }
         }
     }
 }
@@ -503,6 +524,9 @@ svg {
         margin: 0;
         position: relative;
         border: 1px solid #f7f7f7;
+        @include media-breakpoint-down(sm) {
+            display: none;
+        }
         .card {
             margin: 0;
             padding: 0;
@@ -529,7 +553,7 @@ svg {
         .card {
             border: 0;
             border-radius: 0;
-            @include media-breakpoint-down(md) {
+            @include media-breakpoint-between(md, lg) {
                 flex: 0 0 50%;
                 max-width: 50%;
                 margin: 0;
@@ -549,7 +573,7 @@ svg {
                 color: $white;
                 font-weight: bold;
                 background: linear-gradient(90deg, transparent 0%, rgba(0,0,0,.3) 70%);
-                @include media-breakpoint-down(md) {
+                @include media-breakpoint-between(md, lg) {
                     left: 15px;
                     right: 15px;
                     width: calc(100% - 15px);
@@ -610,6 +634,10 @@ svg {
             @include media-breakpoint-down(md) {
                 font-size: 30px;
                 height: 50px;
+            }
+            @include media-breakpoint-down(sm) {
+                font-size: 20px;
+                height: 30px;
             }
         }
     }
@@ -686,6 +714,9 @@ svg {
                 width: 70%;
                 margin: auto;
             }
+            @include media-breakpoint-down(sm) {
+                width: 100%;
+            }
             .card-body {
                 padding-bottom: 0
             }
@@ -705,6 +736,9 @@ svg {
                 font-weight: 400;
                 line-height: 1.5;
                 margin: 1.5rem 0 1rem;
+                @include media-breakpoint-down(sm) {
+                    font-size: 20px;
+                }
             }
             .badge {
                 background-color: $main;
@@ -729,6 +763,9 @@ svg {
             @include media-breakpoint-down(md) {
                 width: 70%;
                 margin: auto;
+            }
+            @include media-breakpoint-down(sm) {
+                width: 100%;
             }
             .title {
                 padding: 0;
@@ -807,7 +844,7 @@ svg {
             height: 60px;
             margin-bottom: 1rem;
             @include media-breakpoint-down(md) {
-                height: 40px;
+                height: 30px;
             }
         }
     }
@@ -818,9 +855,14 @@ svg {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            @include media-breakpoint-down(sm) {
+                flex-direction: column-reverse;
+            }
         }
         .list-inline {
-            margin-bottom: 0;
+            @include media-breakpoint-up(sm) {
+                margin-bottom: 0;
+            }
         }
     }
 }
@@ -830,6 +872,9 @@ svg {
     color: $white;
     border: 0;
     border-radius: 0;
+    @include media-breakpoint-down(sm) {
+        padding: 1rem .75rem;
+    }
     .icon {
         display: inline-block;
         color: inherit;

@@ -239,7 +239,7 @@ svg {
   font-size: 20px;
 }
 
-@media (min-width: 992px) and (max-width: 1619.98px) {
+@media (min-width: 992px) and (max-width: 1439.98px) {
   .navbar {
     font-size: 16px;
   }
@@ -249,6 +249,11 @@ svg {
   .navbar {
     padding-top: 55px;
   }
+}
+
+.navbar .dropdown-menu {
+  border-radius: 0;
+  margin-top: 0;
 }
 
 .navbar .navbar-brand {
@@ -272,6 +277,12 @@ svg {
   .navbar .navbar-brand {
     background-color: #00243B;
     color: #ffffff;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .navbar .navbar-brand svg, .navbar .navbar-brand img {
+    width: 150px;
   }
 }
 
@@ -320,6 +331,14 @@ svg {
   .navbar .nav-phone,
   .navbar.navbar-expand-lg .nav-phone {
     background-color: transparent;
+    padding: 1rem .75rem;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .navbar .nav-phone span,
+  .navbar.navbar-expand-lg .nav-phone span {
+    display: none;
   }
 }
 
@@ -488,7 +507,7 @@ svg {
   background-color: transparent;
 }
 
-@media (max-width: 991.98px) {
+@media (min-width: 768px) and (max-width: 1199.98px) {
   .services .card {
     -webkit-box-flex: 0;
         -ms-flex: 0 0 50%;
@@ -778,6 +797,12 @@ svg {
   background: linear-gradient(90deg, #dee2e6 35%, transparent 35%), linear-gradient(90deg, #f8f9fa 65%, #f8f9fa 65%);
 }
 
+@media (max-width: 767.98px) {
+  .doctors-carousel {
+    background: #dee2e6;
+  }
+}
+
 .doctors .list-group-item {
   margin: 1rem 0;
   padding: 1.75rem;
@@ -875,6 +900,12 @@ svg {
   opacity: 1;
 }
 
+@media (max-width: 767.98px) {
+  .doctors .carousel-indicators.list-group {
+    display: none;
+  }
+}
+
 .story-carousel {
   background: url(../assets/10-background.jpg) no-repeat center top;
   background-size: 100%;
@@ -890,6 +921,12 @@ svg {
   margin: 0;
   position: relative;
   border: 1px solid #f7f7f7;
+}
+
+@media (max-width: 767.98px) {
+  .story .card-deck {
+    display: none;
+  }
 }
 
 .story .card-deck .card {
@@ -919,7 +956,7 @@ svg {
   border-radius: 0;
 }
 
-@media (max-width: 991.98px) {
+@media (min-width: 768px) and (max-width: 1199.98px) {
   .news .carousel-item .card {
     -webkit-box-flex: 0;
         -ms-flex: 0 0 50%;
@@ -945,7 +982,7 @@ svg {
   background: linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, 0.3) 70%);
 }
 
-@media (max-width: 991.98px) {
+@media (min-width: 768px) and (max-width: 1199.98px) {
   .news .carousel-item .card .card-text {
     left: 15px;
     right: 15px;
@@ -1026,6 +1063,13 @@ svg {
   .comparision .carousel-text {
     font-size: 30px;
     height: 50px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .comparision .carousel-text {
+    font-size: 20px;
+    height: 30px;
   }
 }
 
@@ -1119,6 +1163,12 @@ svg {
   }
 }
 
+@media (max-width: 767.98px) {
+  .contact .card-info {
+    width: 100%;
+  }
+}
+
 .contact .card-info .card-body {
   padding-bottom: 0;
 }
@@ -1140,6 +1190,12 @@ svg {
   font-weight: 400;
   line-height: 1.5;
   margin: 1.5rem 0 1rem;
+}
+
+@media (max-width: 767.98px) {
+  .contact .card-info .card-title {
+    font-size: 20px;
+  }
 }
 
 .contact .card-info .badge {
@@ -1174,6 +1230,12 @@ svg {
   .contact .card-form {
     width: 70%;
     margin: auto;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .contact .card-form {
+    width: 100%;
   }
 }
 
@@ -1286,7 +1348,7 @@ svg {
 
 @media (max-width: 991.98px) {
   .footer .top .header {
-    height: 40px;
+    height: 30px;
   }
 }
 
@@ -1307,8 +1369,19 @@ svg {
           align-items: center;
 }
 
-.footer .bottom .list-inline {
-  margin-bottom: 0;
+@media (max-width: 767.98px) {
+  .footer .bottom .container-fluid {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+  }
+}
+
+@media (min-width: 576px) {
+  .footer .bottom .list-inline {
+    margin-bottom: 0;
+  }
 }
 
 .btn--subtle {
@@ -1316,6 +1389,12 @@ svg {
   color: #ffffff;
   border: 0;
   border-radius: 0;
+}
+
+@media (max-width: 767.98px) {
+  .btn--subtle {
+    padding: 1rem .75rem;
+  }
 }
 
 .btn--subtle .icon {
