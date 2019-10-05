@@ -1,6 +1,9 @@
 body {
     font-family: "Helvetica Neue",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
     color: $main;
+
+    max-width: 2160px;
+    margin: auto;
 }
 
 .font {
@@ -21,15 +24,31 @@ svg {
     line-height: 1.2;
     text-transform: uppercase;
     font-size: 20px;
+    @include media-breakpoint-down(xxl) {
+        font-size: 16px;
+    }
+    @include media-breakpoint-between(lg, xl) {
+        padding-top: 55px;
+    }
     .navbar-brand {
         background-color: $white;
         padding: .5rem 1rem;
         margin-right: 0;
+        @include media-breakpoint-between(lg, xl) {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 55px;
+            text-align: center;
+        }
     }
     .nav-link,
     &.navbar-expand-lg .nav-link{
         color: $white;
         padding: 1rem 1rem;
+        @include media-breakpoint-between(lg, xl) {
+            padding: 1.15rem 1rem;
+        }
         &:hover, &:active {
             background-color: $white;
             color: $main;
@@ -39,6 +58,7 @@ svg {
     &.navbar-expand-lg .nav-phone {
         background-color: $orange;
         padding: 1rem 1.5rem;
+        height: 100%;
         &:hover, &:active {
             background-color: $orange-dark;
             color: $white;
@@ -89,6 +109,14 @@ svg {
     font-size: 50px;
     padding: 2.5rem 0;
     text-align: center;
+    @include media-breakpoint-down(xl) {
+        font-size: 44px;
+        padding: 2rem 0;
+    }
+    @include media-breakpoint-down(lg) {
+        font-size: 36px;
+        padding: 1.5rem 0;
+    }
 }
 .services {
     background: url(../assets/3-background.jpg);
@@ -111,8 +139,11 @@ svg {
             font-family: "SFU Helvetica", "Helvetica Neue", sans-serif;
             font-size: 36px;
             text-align: center;
-            @include media-breakpoint-down(xl) {
-                font-size: 32px;
+            @include media-breakpoint-down(xxl) {
+                font-size: 28px;
+            }
+            @include media-breakpoint-between(lg, xl) {
+                font-size: 24px;
             }
             span {
                 display: block;
@@ -162,6 +193,9 @@ svg {
         }
         &-body {
             height: 120px;
+            @include media-breakpoint-between(lg, xl) {
+                height: 100px;
+            }
         }
         &:hover, &:active {
             .card-extra {
@@ -184,6 +218,9 @@ svg {
         text-align: center;
         border: 1px solid $gray-100;
         transition: transform 0.5s ease-in; 
+        @include media-breakpoint-between(lg, xl) {
+            height: calc(100% - 100px);
+        }
         .card-extra-item {
             margin: 0;
             background-color: $white;
@@ -197,6 +234,9 @@ svg {
                 max-width: 160px;
                 margin-bottom: 20px;
                 border-radius: 50%;
+                @include media-breakpoint-down(xl) {
+                    max-width: 100px;
+                }
             }
             .card-text {
                 font-size: 20px;
@@ -215,6 +255,13 @@ svg {
     padding: 2rem 3.25rem;
     font-size: 20px;
     font-weight: 300;
+    @include media-breakpoint-between(lg, xl) {
+        font-size: 18px;
+    }
+    @include media-breakpoint-down(lg) {
+        padding: 1.5rem 2rem;
+        font-size: 16px;
+    }
     .title {
         line-height: 1.5;
         padding-bottom: .75rem;
@@ -277,6 +324,9 @@ svg {
             color: $main;
             border-radius: 10px;
             border: 0;
+            @include media-breakpoint-down(lg) {
+                padding: 1rem;
+            }
             &.active, &:active, &:hover {
                 background-color: $white;
                 box-shadow: 2px 5px 11px rgba(0, 36, 59, 0.25);
@@ -290,6 +340,7 @@ svg {
                 border-radius: 50%;
                 border: 5px solid transparent;
                 max-width: 100%;
+                width: 30%;
             }
             .media {
                 align-items: center;
@@ -297,6 +348,9 @@ svg {
                     h5 {
                         font-family: "SFU Helvetica", "Helvetica Neue", sans-serif;
                         font-size: 30px;
+                        @include media-breakpoint-down(lg) {
+                            font-size: 26px;
+                        }
                     }
                     font-size: 16px;
                     text-transform: capitalize;
@@ -433,9 +487,16 @@ svg {
     @include media-breakpoint-down(xl) {
         background:
             url(../assets/8-background.png) no-repeat center bottom,
-            url(../assets/lady.png) no-repeat right 8rem bottom 200px,
+            url(../assets/lady.png) no-repeat right 8rem bottom 180px,
             linear-gradient(180deg, $white 3%, $blue-light 97%);
         background-size: 100%, 400px, 100%;
+    }
+    @include media-breakpoint-down(lg) {
+        background:
+            url(../assets/8-background.png) no-repeat center bottom,
+            url(../assets/lady.png) no-repeat right 2rem bottom 140px,
+            linear-gradient(180deg, $white 3%, $blue-light 97%);
+        background-size: 100%, 300px, 100%;
     }
     &-footer {
         margin-top: -300px;
@@ -463,7 +524,13 @@ svg {
             background: transparent;
             border: 0;
             font-size: 20px;
-
+            @include media-breakpoint-down(lg) {
+                top: 4rem;
+                right: 15px;
+                left: unset;
+                width: 50%;
+                background-color: rgba($color: #ffffff, $alpha: .8);
+            }
             .card-body {
                 padding-bottom: 0
             }
@@ -493,12 +560,16 @@ svg {
         &-form {
             width: 400px;
             background: url(../assets/9-background.jpg) no-repeat top center;
-            background-size: 105%;
+            background-size: cover;
             border: 0;
             box-shadow: 2px 2px 15px rgba($color: $main, $alpha: .15);
             margin-left: 8rem;
             @include media-breakpoint-down(xl) {
                 margin-left: 0;
+                width: 350px;
+            }
+            @include media-breakpoint-down(lg) {
+                width: 40%;
             }
             .title {
                 padding: 0;

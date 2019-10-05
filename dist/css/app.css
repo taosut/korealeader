@@ -92,7 +92,7 @@
   background: transparent;
   font-size: 2em;
   width: 100%;
-  padding: 1em 3em 1em .5em;
+  padding: 1em 3em .5em .5em;
   background-image: linear-gradient(transparent calc(100% - 4px), #4F8ECB calc(100% - 4px), #4F8ECB calc(100% - 2px), transparent 2px);
   background-size: 0% 100%;
   background-repeat: no-repeat;
@@ -113,7 +113,7 @@
 
 .full-screen-search__btn {
   position: absolute;
-  top: calc(50% - 1.5em);
+  top: calc(50% - 2em);
   right: .5em;
   height: 3.750em;
   width: 3.750em;
@@ -181,6 +181,8 @@
 body {
   font-family: "Helvetica Neue",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
   color: #00243B;
+  max-width: 2160px;
+  margin: auto;
 }
 
 .font-main {
@@ -237,16 +239,45 @@ svg {
   font-size: 20px;
 }
 
+@media (max-width: 1619.98px) {
+  .navbar {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1439.98px) {
+  .navbar {
+    padding-top: 55px;
+  }
+}
+
 .navbar .navbar-brand {
   background-color: #ffffff;
   padding: .5rem 1rem;
   margin-right: 0;
 }
 
+@media (min-width: 992px) and (max-width: 1439.98px) {
+  .navbar .navbar-brand {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 55px;
+    text-align: center;
+  }
+}
+
 .navbar .nav-link,
 .navbar.navbar-expand-lg .nav-link {
   color: #ffffff;
   padding: 1rem 1rem;
+}
+
+@media (min-width: 992px) and (max-width: 1439.98px) {
+  .navbar .nav-link,
+  .navbar.navbar-expand-lg .nav-link {
+    padding: 1.15rem 1rem;
+  }
 }
 
 .navbar .nav-link:hover, .navbar .nav-link:active,
@@ -260,6 +291,7 @@ svg {
 .navbar.navbar-expand-lg .nav-phone {
   background-color: #F36E2E;
   padding: 1rem 1.5rem;
+  height: 100%;
 }
 
 .navbar .nav-phone:hover, .navbar .nav-phone:active,
@@ -325,6 +357,20 @@ svg {
   text-align: center;
 }
 
+@media (max-width: 1439.98px) {
+  .title {
+    font-size: 44px;
+    padding: 2rem 0;
+  }
+}
+
+@media (max-width: 1199.98px) {
+  .title {
+    font-size: 36px;
+    padding: 1.5rem 0;
+  }
+}
+
 .services {
   background: url(../assets/3-background.jpg);
   background-size: 100%;
@@ -358,7 +404,13 @@ svg {
 
 @media (max-width: 1619.98px) {
   .services .card-title {
-    font-size: 32px;
+    font-size: 28px;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1439.98px) {
+  .services .card-title {
+    font-size: 24px;
   }
 }
 
@@ -410,6 +462,12 @@ svg {
   height: 120px;
 }
 
+@media (min-width: 992px) and (max-width: 1439.98px) {
+  .services .card-body {
+    height: 100px;
+  }
+}
+
 .services .card:hover .card-extra, .services .card:active .card-extra {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -435,6 +493,12 @@ svg {
   transition: transform 0.5s ease-in, -webkit-transform 0.5s ease-in;
 }
 
+@media (min-width: 992px) and (max-width: 1439.98px) {
+  .services .card-extra {
+    height: calc(100% - 100px);
+  }
+}
+
 .services .card-extra .card-extra-item {
   margin: 0;
   background-color: #ffffff;
@@ -457,6 +521,12 @@ svg {
   max-width: 160px;
   margin-bottom: 20px;
   border-radius: 50%;
+}
+
+@media (max-width: 1439.98px) {
+  .services .card-extra .card-extra-item .card-img {
+    max-width: 100px;
+  }
 }
 
 .services .card-extra .card-extra-item .card-text {
@@ -485,6 +555,19 @@ svg {
   padding: 2rem 3.25rem;
   font-size: 20px;
   font-weight: 300;
+}
+
+@media (min-width: 992px) and (max-width: 1439.98px) {
+  .block {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 1199.98px) {
+  .block {
+    padding: 1.5rem 2rem;
+    font-size: 16px;
+  }
 }
 
 .block .title {
@@ -556,6 +639,12 @@ svg {
   border: 0;
 }
 
+@media (max-width: 1199.98px) {
+  .doctors .list-group-item {
+    padding: 1rem;
+  }
+}
+
 .doctors .list-group-item.active, .doctors .list-group-item:active, .doctors .list-group-item:hover {
   background-color: #ffffff;
   -webkit-box-shadow: 2px 5px 11px rgba(0, 36, 59, 0.25);
@@ -572,6 +661,7 @@ svg {
   border-radius: 50%;
   border: 5px solid transparent;
   max-width: 100%;
+  width: 30%;
 }
 
 .doctors .list-group-item .media {
@@ -589,6 +679,12 @@ svg {
 .doctors .list-group-item .media-body h5 {
   font-family: "SFU Helvetica", "Helvetica Neue", sans-serif;
   font-size: 30px;
+}
+
+@media (max-width: 1199.98px) {
+  .doctors .list-group-item .media-body h5 {
+    font-size: 26px;
+  }
 }
 
 .doctors .carousel-indicators.list-group {
@@ -727,11 +823,19 @@ svg {
   padding: 2rem 0 8rem;
 }
 
-@media (max-width: 1619.98px) {
+@media (max-width: 1439.98px) {
   .contact {
-    background: url(../assets/8-background.png) no-repeat center bottom, url(../assets/lady.png) no-repeat right 8rem bottom 200px, -webkit-gradient(linear, left top, left bottom, color-stop(3%, #ffffff), color-stop(97%, #D2E5F9));
-    background: url(../assets/8-background.png) no-repeat center bottom, url(../assets/lady.png) no-repeat right 8rem bottom 200px, linear-gradient(180deg, #ffffff 3%, #D2E5F9 97%);
+    background: url(../assets/8-background.png) no-repeat center bottom, url(../assets/lady.png) no-repeat right 8rem bottom 180px, -webkit-gradient(linear, left top, left bottom, color-stop(3%, #ffffff), color-stop(97%, #D2E5F9));
+    background: url(../assets/8-background.png) no-repeat center bottom, url(../assets/lady.png) no-repeat right 8rem bottom 180px, linear-gradient(180deg, #ffffff 3%, #D2E5F9 97%);
     background-size: 100%, 400px, 100%;
+  }
+}
+
+@media (max-width: 1199.98px) {
+  .contact {
+    background: url(../assets/8-background.png) no-repeat center bottom, url(../assets/lady.png) no-repeat right 2rem bottom 140px, -webkit-gradient(linear, left top, left bottom, color-stop(3%, #ffffff), color-stop(97%, #D2E5F9));
+    background: url(../assets/8-background.png) no-repeat center bottom, url(../assets/lady.png) no-repeat right 2rem bottom 140px, linear-gradient(180deg, #ffffff 3%, #D2E5F9 97%);
+    background-size: 100%, 300px, 100%;
   }
 }
 
@@ -749,7 +853,7 @@ svg {
   z-index: 9;
 }
 
-@media (max-width: 1619.98px) {
+@media (max-width: 1439.98px) {
   .contact-image {
     bottom: 200px;
   }
@@ -768,6 +872,16 @@ svg {
   background: transparent;
   border: 0;
   font-size: 20px;
+}
+
+@media (max-width: 1199.98px) {
+  .contact .card-info {
+    top: 4rem;
+    right: 15px;
+    left: unset;
+    width: 50%;
+    background-color: rgba(255, 255, 255, 0.8);
+  }
 }
 
 .contact .card-info .card-body {
@@ -801,16 +915,23 @@ svg {
 .contact .card-form {
   width: 400px;
   background: url(../assets/9-background.jpg) no-repeat top center;
-  background-size: 105%;
+  background-size: cover;
   border: 0;
   -webkit-box-shadow: 2px 2px 15px rgba(0, 36, 59, 0.15);
           box-shadow: 2px 2px 15px rgba(0, 36, 59, 0.15);
   margin-left: 8rem;
 }
 
-@media (max-width: 1619.98px) {
+@media (max-width: 1439.98px) {
   .contact .card-form {
     margin-left: 0;
+    width: 350px;
+  }
+}
+
+@media (max-width: 1199.98px) {
+  .contact .card-form {
+    width: 40%;
   }
 }
 

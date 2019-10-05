@@ -80,7 +80,7 @@
     background: transparent; // reset
     font-size: 2em;
     width: 100%;
-    padding: 1em 3em 1em .5em;
+    padding: 1em 3em .5em .5em;
     background-image: linear-gradient(transparent calc(100% - 4px),$blue calc(100% - 4px),$blue calc(100% - 2px),transparent 2px); // border bottom
     background-size: 0% 100%;
     background-repeat: no-repeat;
@@ -101,7 +101,7 @@
   
   .full-screen-search__btn {
     position: absolute;
-    top: calc(50% - 1.5em);
+    top: calc(50% - 2em);
     right: .5em;
     height: 3.750em;
     width: 3.750em;
