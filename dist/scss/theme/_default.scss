@@ -166,6 +166,8 @@ svg {
         &:hover, &:active {
             .card-extra {
                 display: flex;
+                animation: fadein 0.5s;
+                // transform: translateX(100%);
             }
         }
     }
@@ -181,6 +183,7 @@ svg {
         z-index: 11;
         text-align: center;
         border: 1px solid $gray-100;
+        transition: transform 0.5s ease-in; 
         .card-extra-item {
             margin: 0;
             background-color: $white;
@@ -202,47 +205,11 @@ svg {
     }
 }
 
-.doctors {
-    &-carousel {
-        background: linear-gradient(90deg, $gray-300 35%, transparent 35%), linear-gradient(90deg, $gray-100 65%, $gray-100 65%);
-    }
-    .list-group {
-        &-item {
-            margin: 1rem 0;
-            padding: 1.75rem;
-            background: transparent;
-            color: $main;
-            border-radius: 10px;
-            border: 0;
-            &.active, &:active, &:hover {
-                background-color: $white;
-                box-shadow: 2px 5px 11px rgba(0, 36, 59, 0.25);
-                text-decoration: none;
-                img {
-                    border: 5px solid $blue
-                }
-            }
-            img {
-                background: $white;
-                border-radius: 50%;
-                border: 5px solid transparent;
-                max-width: 100%;
-            }
-            .media {
-                align-items: center;
-                &-body {
-                    h5 {
-                        font-family: "SFU Helvetica", "Helvetica Neue", sans-serif;
-                        font-size: 30px;
-                    }
-                    font-size: 16px;
-                    text-transform: capitalize;
-                    font-weight: 400;
-                }
-            }
-        }
-    }
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
 }
+
 
 .block {
     padding: 2rem 3.25rem;
@@ -298,6 +265,65 @@ svg {
     width: 29px;
     border-radius: 10px;
 }
+.doctors {
+    &-carousel {
+        background: linear-gradient(90deg, $gray-300 35%, transparent 35%), linear-gradient(90deg, $gray-100 65%, $gray-100 65%);
+    }
+    .list-group {
+        &-item {
+            margin: 1rem 0;
+            padding: 1.75rem;
+            background: transparent;
+            color: $main;
+            border-radius: 10px;
+            border: 0;
+            &.active, &:active, &:hover {
+                background-color: $white;
+                box-shadow: 2px 5px 11px rgba(0, 36, 59, 0.25);
+                text-decoration: none;
+                img {
+                    border: 5px solid $blue
+                }
+            }
+            img {
+                background: $white;
+                border-radius: 50%;
+                border: 5px solid transparent;
+                max-width: 100%;
+            }
+            .media {
+                align-items: center;
+                &-body {
+                    h5 {
+                        font-family: "SFU Helvetica", "Helvetica Neue", sans-serif;
+                        font-size: 30px;
+                    }
+                    font-size: 16px;
+                    text-transform: capitalize;
+                    font-weight: 400;
+                }
+            }
+        }
+    }
+
+    .carousel-indicators {
+        &.list-group {
+            margin: 0;
+            position: relative;
+            left: unset;
+            right: unset;
+            bottom: unset;
+            .list-group-item {
+                width: 100%;
+                opacity: 1;
+                &.active {
+                    width: 100%;
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}
 
 .story {
     &-carousel {
@@ -307,6 +333,7 @@ svg {
     .card-deck {
         margin: 0;
         position: relative;
+        border: 1px solid #f7f7f7;
         .card {
             margin: 0;
             padding: 0;
@@ -316,6 +343,9 @@ svg {
             &.active {
                 border: 10px solid $orange;
                 opacity: 1;
+            }
+            &-img-top {
+                border-radius: 0;
             }
         }
     }
@@ -463,7 +493,7 @@ svg {
         &-form {
             width: 400px;
             background: url(../assets/9-background.jpg) no-repeat top center;
-            background-size: 100%;
+            background-size: 105%;
             border: 0;
             box-shadow: 2px 2px 15px rgba($color: $main, $alpha: .15);
             margin-left: 8rem;

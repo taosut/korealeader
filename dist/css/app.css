@@ -234,6 +234,8 @@ svg {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-animation: fadein 0.5s;
+          animation: fadein 0.5s;
 }
 
 .services .card-extra {
@@ -247,6 +249,10 @@ svg {
   z-index: 11;
   text-align: center;
   border: 1px solid #f8f9fa;
+  -webkit-transition: -webkit-transform 0.5s ease-in;
+  transition: -webkit-transform 0.5s ease-in;
+  transition: transform 0.5s ease-in;
+  transition: transform 0.5s ease-in, -webkit-transform 0.5s ease-in;
 }
 
 .services .card-extra .card-extra-item {
@@ -277,53 +283,22 @@ svg {
   font-size: 20px;
 }
 
-.doctors-carousel {
-  background: -webkit-gradient(linear, left top, right top, color-stop(35%, #dee2e6), color-stop(35%, transparent)), -webkit-gradient(linear, left top, right top, color-stop(65%, #f8f9fa), color-stop(65%, #f8f9fa));
-  background: linear-gradient(90deg, #dee2e6 35%, transparent 35%), linear-gradient(90deg, #f8f9fa 65%, #f8f9fa 65%);
+@-webkit-keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
-.doctors .list-group-item {
-  margin: 1rem 0;
-  padding: 1.75rem;
-  background: transparent;
-  color: #00243B;
-  border-radius: 10px;
-  border: 0;
-}
-
-.doctors .list-group-item.active, .doctors .list-group-item:active, .doctors .list-group-item:hover {
-  background-color: #ffffff;
-  -webkit-box-shadow: 2px 5px 11px rgba(0, 36, 59, 0.25);
-          box-shadow: 2px 5px 11px rgba(0, 36, 59, 0.25);
-  text-decoration: none;
-}
-
-.doctors .list-group-item.active img, .doctors .list-group-item:active img, .doctors .list-group-item:hover img {
-  border: 5px solid #4F8ECB;
-}
-
-.doctors .list-group-item img {
-  background: #ffffff;
-  border-radius: 50%;
-  border: 5px solid transparent;
-  max-width: 100%;
-}
-
-.doctors .list-group-item .media {
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.doctors .list-group-item .media-body {
-  font-size: 16px;
-  text-transform: capitalize;
-  font-weight: 400;
-}
-
-.doctors .list-group-item .media-body h5 {
-  font-family: "SFU Helvetica", "Helvetica Neue", sans-serif;
-  font-size: 30px;
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .block {
@@ -387,6 +362,73 @@ svg {
   border-radius: 10px;
 }
 
+.doctors-carousel {
+  background: -webkit-gradient(linear, left top, right top, color-stop(35%, #dee2e6), color-stop(35%, transparent)), -webkit-gradient(linear, left top, right top, color-stop(65%, #f8f9fa), color-stop(65%, #f8f9fa));
+  background: linear-gradient(90deg, #dee2e6 35%, transparent 35%), linear-gradient(90deg, #f8f9fa 65%, #f8f9fa 65%);
+}
+
+.doctors .list-group-item {
+  margin: 1rem 0;
+  padding: 1.75rem;
+  background: transparent;
+  color: #00243B;
+  border-radius: 10px;
+  border: 0;
+}
+
+.doctors .list-group-item.active, .doctors .list-group-item:active, .doctors .list-group-item:hover {
+  background-color: #ffffff;
+  -webkit-box-shadow: 2px 5px 11px rgba(0, 36, 59, 0.25);
+          box-shadow: 2px 5px 11px rgba(0, 36, 59, 0.25);
+  text-decoration: none;
+}
+
+.doctors .list-group-item.active img, .doctors .list-group-item:active img, .doctors .list-group-item:hover img {
+  border: 5px solid #4F8ECB;
+}
+
+.doctors .list-group-item img {
+  background: #ffffff;
+  border-radius: 50%;
+  border: 5px solid transparent;
+  max-width: 100%;
+}
+
+.doctors .list-group-item .media {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.doctors .list-group-item .media-body {
+  font-size: 16px;
+  text-transform: capitalize;
+  font-weight: 400;
+}
+
+.doctors .list-group-item .media-body h5 {
+  font-family: "SFU Helvetica", "Helvetica Neue", sans-serif;
+  font-size: 30px;
+}
+
+.doctors .carousel-indicators.list-group {
+  margin: 0;
+  position: relative;
+  left: unset;
+  right: unset;
+  bottom: unset;
+}
+
+.doctors .carousel-indicators.list-group .list-group-item {
+  width: 100%;
+  opacity: 1;
+}
+
+.doctors .carousel-indicators.list-group .list-group-item.active {
+  width: 100%;
+  opacity: 1;
+}
+
 .story-carousel {
   background: url(../assets/10-background.jpg) no-repeat center top;
   background-size: 100%;
@@ -395,6 +437,7 @@ svg {
 .story .card-deck {
   margin: 0;
   position: relative;
+  border: 1px solid #f7f7f7;
 }
 
 .story .card-deck .card {
@@ -408,6 +451,10 @@ svg {
 .story .card-deck .card.active {
   border: 10px solid #F36E2E;
   opacity: 1;
+}
+
+.story .card-deck .card-img-top {
+  border-radius: 0;
 }
 
 .story .carousel-control-next-icon,
@@ -574,7 +621,7 @@ svg {
 .contact .card-form {
   width: 400px;
   background: url(../assets/9-background.jpg) no-repeat top center;
-  background-size: 100%;
+  background-size: 105%;
   border: 0;
   -webkit-box-shadow: 2px 2px 15px rgba(0, 36, 59, 0.15);
           box-shadow: 2px 2px 15px rgba(0, 36, 59, 0.15);
