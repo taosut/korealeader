@@ -584,3 +584,24 @@ svg {
         }
     }
 }
+
+.btn--subtle {
+    padding: 1rem 1.5rem;
+    color: $white;
+    border: 0;
+    border-radius: 0;
+    .icon {
+        display: inline-block;
+        color: inherit;
+        fill: currentColor;
+        height: 1em;
+        width: 1em;
+        line-height: 1;
+        -ms-flex-negative: 0;
+        flex-shrink: 0;
+    }
+    &:hover, &:active {
+        background-color: $white;
+        $color: $main;
+    }
+}

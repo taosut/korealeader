@@ -84,6 +84,11 @@
                 
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
+                        <button class="btn btn--subtle btn--icon" aria-controls="modal-search">
+                            <svg class="icon" viewBox="0 0 24 24"><title>Toggle search</title><g stroke-linecap="square" stroke-linejoin="miter" stroke-width="2" stroke="currentColor" fill="none" stroke-miterlimit="10"><line x1="22" y1="22" x2="15.656" y2="15.656"></line><circle cx="10" cy="10" r="8"></circle></g></svg>
+                        </button>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link nav-phone" href="tel:088.8886.199">
                             <svg xmlns="http://www.w3.org/2000/svg" width="15.33" height="15.331" viewBox="0 0 15.33 15.331">
                                 <g id="telephone-handle-silhouette" transform="translate(-0.01)">
@@ -969,6 +974,23 @@
             </div>
         </div>
     </footer>
+
+
+    <!-- Modal Search -->
+
+    <div class="modal--fixed modal--search js-modal" id="modal-search" data-animation="on">
+        <form class="full-screen-search">
+            <label for="searchInputX" class="sr-only">Tìm kiếm</label>
+            <input class="reset full-screen-search__input" type="search" name="searchInputX" id="searchInputX" placeholder="Tìm kiếm...">
+            <button class="reset full-screen-search__btn">
+            <svg class="icon" viewBox="0 0 24 24"><title>Tìm kiếm</title><g stroke-linecap="square" stroke-linejoin="miter" stroke-width="2" stroke="currentColor" fill="none" stroke-miterlimit="10"><line x1="22" y1="22" x2="15.656" y2="15.656"></line><circle cx="10" cy="10" r="8"></circle></g></svg>
+            </button>
+        </form>
+        
+        <button class="reset modal__close-btn js-modal__close">
+            <svg class="icon" viewBox="0 0 16 16"><title>Close modal window</title><g stroke-width="1" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10"><line x1="13.5" y1="2.5" x2="2.5" y2="13.5"></line><line x1="2.5" y1="2.5" x2="13.5" y2="13.5"></line></g></svg>
+        </button>
+    </div>
     
     <!-- Jquery Library -->
     <script src="//code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
