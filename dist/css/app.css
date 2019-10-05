@@ -1081,7 +1081,7 @@ svg {
   padding: 2rem 0 8rem;
 }
 
-@media (max-width: 1439.98px) {
+@media (max-width: 1619.98px) {
   .contact {
     background: url(../assets/8-background.png) no-repeat center bottom, url(../assets/lady.png) no-repeat right 8rem bottom 180px, -webkit-gradient(linear, left top, left bottom, color-stop(3%, #ffffff), color-stop(97%, #D2E5F9));
     background: url(../assets/8-background.png) no-repeat center bottom, url(../assets/lady.png) no-repeat right 8rem bottom 180px, linear-gradient(180deg, #ffffff 3%, #D2E5F9 97%);
@@ -1097,7 +1097,7 @@ svg {
   }
 }
 
-@media (max-width: 1199.98px) {
+@media (max-width: 991.98px) {
   .contact {
     background: url(../assets/8-background.png) no-repeat center bottom, -webkit-gradient(linear, left top, left bottom, color-stop(3%, #ffffff), color-stop(97%, #D2E5F9));
     background: url(../assets/8-background.png) no-repeat center bottom, linear-gradient(180deg, #ffffff 3%, #D2E5F9 97%);

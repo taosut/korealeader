@@ -651,7 +651,7 @@ svg {
         linear-gradient(180deg, $white 3%, $blue-light 97%);
     background-size: 100%, 400px, 100%;
     padding: 2rem 0 8rem;
-    @include media-breakpoint-down(xl) {
+    @include media-breakpoint-down(xxl) {
         background:
             url(../assets/8-background.png) no-repeat center bottom,
             url(../assets/lady.png) no-repeat right 8rem bottom 180px,
@@ -665,7 +665,7 @@ svg {
             linear-gradient(180deg, $white 3%, $blue-light 97%);
         background-size: 100%, 300px, 100%;
     }
-    @include media-breakpoint-down(lg) {
+    @include media-breakpoint-down(md) {
         background:
             url(../assets/8-background.png) no-repeat center bottom,
             linear-gradient(180deg, $white 3%, $blue-light 97%);
