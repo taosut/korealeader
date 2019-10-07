@@ -1411,4 +1411,37 @@ svg {
 .btn--subtle:hover, .btn--subtle:active {
   background-color: #ffffff;
 }
+
+@media (min-width: 768px) {
+  .summary p.collapse {
+    display: block;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .summary p.collapse:not(.show) {
+    height: 100px !important;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
+  .summary p.collapsing {
+    min-height: 100px !important;
+  }
+  .summary a {
+    color: #4F8ECB;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  .summary a:hover, .summary a:active {
+    text-decoration: none;
+  }
+  .summary a.collapsed:after {
+    content: attr(data-more-text);
+  }
+  .summary a:not(.collapsed):after {
+    content: attr(data-less-text);
+  }
+}
 /*# sourceMappingURL=app.css.map */
