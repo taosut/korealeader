@@ -24,10 +24,11 @@ svg {
     line-height: 1.2;
     text-transform: uppercase;
     font-size: 20px;
-    @include media-breakpoint-between(lg, xl) {
-        font-size: 16px;
+    @include media-breakpoint-between(xl, xxl) {
+        font-size: 18px;
     }
     @include media-breakpoint-between(lg, xl) {
+        font-size: 16px;
         padding-top: 55px;
     }
     .dropdown-menu {
@@ -60,6 +61,10 @@ svg {
     &.navbar-expand-lg .nav-link{
         color: $white;
         padding: 1rem 1rem;
+        position: relative;
+        @include media-breakpoint-between(xl, xxl) {
+            padding: 1.1rem .75rem;
+        }
         @include media-breakpoint-between(lg, xl) {
             padding: 1.15rem 1rem;
         }
@@ -69,6 +74,19 @@ svg {
         &:hover, &:active {
             background-color: $white;
             color: $main;
+        }
+        &.active {
+            &::after {
+                content: '';
+                position: absolute;
+                width: 100%;
+                height: 7px;
+                background-color: $orange;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                z-index: 10;
+            }
         }
     }
     .nav-phone,
@@ -198,6 +216,7 @@ svg {
     font-size: 50px;
     padding: 2.5rem 0;
     text-align: center;
+    line-height: 1.2;
     @include media-breakpoint-down(xl) {
         font-size: 44px;
         padding: 2rem 0;
@@ -205,6 +224,13 @@ svg {
     @include media-breakpoint-down(lg) {
         font-size: 36px;
         padding: 1.5rem 0;
+    }
+    span {
+        display: block;
+        font-size: 55%;
+        font-family: "Helvetica Neue", "SFU Helvetica", sans-serif;
+        text-transform: capitalize;
+        font-weight: 200;
     }
 }
 .services {
@@ -926,6 +952,140 @@ svg {
             }
             &:not(.collapsed):after {
                 content: attr(data-less-text);
+            }
+        }
+    }
+}
+
+[aria-label="breadcrumb"] {
+    background: $gray-200;
+}
+.breadcrumb {
+    margin: 0;
+    border: 0;
+}
+.breadcrumb-item {
+    a {
+        color: $main; 
+        text-transform: uppercase;
+    }
+    + .breadcrumb-item { 
+        color: $main; 
+        text-transform: uppercase;
+        &::before {
+            content: '';
+            height: 10px;
+            width: 10px;
+            margin-right: .5rem;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="5.349" height="9.132" viewBox="0 0 5.349 9.132"><path id="Path_2224" data-name="Path 2224" d="M488.348,375.842l-.783-.783,3.784-3.783-3.784-3.784.783-.783,4.566,4.566Z" transform="translate(-487.565 -366.709)" fill="currentColor"/></svg>') no-repeat center center;
+        }
+    }
+}
+
+.carousel-caption {
+    @include media-breakpoint-up(lg) {
+        bottom: 100px;
+    }
+    @include media-breakpoint-between(md,lg) {
+        bottom: 50px;
+    }
+    &-action {
+        margin-bottom: 1rem;
+        svg {
+            width: 125px;
+            max-width: 100%;
+            margin-bottom: .75rem;
+            @include media-breakpoint-down(md) {
+                width: 55px;
+                height: 55px;
+            }
+        }
+    }
+    h5 {
+        font-family: "SFU Helvetica", "Helvetica Neue", sans-serif;
+        font-size: 70px;
+        text-transform: uppercase;
+        letter-spacing: .15rem;
+        @include media-breakpoint-down(md) {
+            font-size: 40px;
+        }
+    }
+    p {
+        font-size: 30px;
+        font-weight: 100;
+        @include media-breakpoint-down(md) {
+            font-size: 20px;
+        }
+    }
+}
+
+.introduction {
+    @include media-breakpoint-up(lg) {
+        background: $gray-100;
+    }
+    .container-fluid {
+        max-width: 1200px;
+
+        .tab-content>.tab-pane {
+            background: $white;
+            @include media-breakpoint-up(lg) {
+                padding: 2rem;
+            }
+        }
+    }
+    .card-columns {
+        @include media-breakpoint-up(lg) {
+            column-count: 4;
+        }
+        @include media-breakpoint-between(md,lg) {
+            column-count: 3;
+        }
+    }
+    .card {
+        border: 0;
+        border-radius: 0;
+        margin-bottom: 1rem;
+        text-align: center;
+        &-img-top {
+            border-radius: 0;
+        }
+        &-title {
+            font-family: "SFU Helvetica", "Helvetica Neue", sans-serif;
+            font-size: 24px;
+            text-transform: uppercase;
+            letter-spacing: .15rem;
+            span {
+                display: block;
+                font-size: 55%;
+                font-family: "Helvetica Neue", "SFU Helvetica", sans-serif;
+                text-transform: capitalize;
+                letter-spacing: normal;
+                font-weight: 400;
+            }
+        }
+    }
+    &-block {
+        @include media-breakpoint-up(md) {
+            margin-top: -68px;
+            position: relative;
+            z-index: 1000;
+        }
+    }
+    .nav-tabs {
+        .nav-link {
+            font-family: "SFU Helvetica", "Helvetica Neue", sans-serif;
+            font-size: 24px;
+            text-transform: uppercase;
+            letter-spacing: .15rem;
+            color: $white;
+            background-color: $main;
+            border-radius: 0;
+            border: 0;
+            padding: 1rem;
+
+            &:hover, &:active, &.active {
+                background-color: $white;
+                color: $main;
             }
         }
     }
