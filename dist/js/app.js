@@ -26,3 +26,27 @@ jQuery(document).ready(function($) {
   });
 
 });
+
+(function() {
+  let playerFrame = $('.youtube')[0];
+  
+  let tag = document.createElement('script');
+  tag.src = 'https://www.youtube.com/iframe_api';
+  let firstScriptTag = document.getElementsByTagName('script')[0];
+  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+  let player;
+  window.onYouTubeIframeAPIReady = function() {
+    player = new YT.Player(playerFrame, {
+      events: {
+        'onStateChange': onPlayerStateChange
+      }
+    });
+  };
+
+  window.onPlayerStateChange = function(event) {
+    if (event.data == YT.PlayerState.ENDED) {
+      player.seekTo(0);
+    }
+  };
+})();

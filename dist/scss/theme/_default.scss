@@ -1019,6 +1019,18 @@ svg {
     }
 }
 
+.carousel-doctor {
+    background: url(../assets/11-background.jpg) no-repeat center center;
+    background-size: cover;
+    .carousel-caption {
+        position: relative;
+        right: 0;
+        left: 0;
+        bottom: unset;
+        background: rgba($color: $main, $alpha: .21);
+    }
+}
+
 .introduction {
     @include media-breakpoint-up(lg) {
         background: $gray-100;
@@ -1042,27 +1054,7 @@ svg {
         }
     }
     .card {
-        border: 0;
-        border-radius: 0;
-        margin-bottom: 1rem;
         text-align: center;
-        &-img-top {
-            border-radius: 0;
-        }
-        &-title {
-            font-family: "SFU Helvetica", "Helvetica Neue", sans-serif;
-            font-size: 24px;
-            text-transform: uppercase;
-            letter-spacing: .15rem;
-            span {
-                display: block;
-                font-size: 55%;
-                font-family: "Helvetica Neue", "SFU Helvetica", sans-serif;
-                text-transform: capitalize;
-                letter-spacing: normal;
-                font-weight: 400;
-            }
-        }
     }
     &-block {
         @include media-breakpoint-up(md) {
@@ -1087,6 +1079,70 @@ svg {
                 background-color: $white;
                 color: $main;
             }
+        }
+    }
+}
+
+.card {
+    border: 0;
+    border-radius: 0;
+    margin-bottom: 1rem;
+    &-img-top {
+        border-radius: 0;
+    }
+    &-title {
+        font-family: "SFU Helvetica", "Helvetica Neue", sans-serif;
+        font-size: 24px;
+        text-transform: uppercase;
+        letter-spacing: .15rem;
+        span {
+            display: block;
+            font-size: 55%;
+            font-family: "Helvetica Neue", "SFU Helvetica", sans-serif;
+            text-transform: capitalize;
+            letter-spacing: normal;
+            font-weight: 400;
+        }
+    }
+    a {
+        color: $main;
+        &:hover, &:active {
+            text-decoration: none;
+        }
+    }
+}
+
+.doctor-block {
+    padding: 0;
+    position: relative;
+    .close {
+        position: absolute;
+        top: 25px;
+        right: 25px;
+        z-index: 10;
+    }
+    .card {
+        @include media-breakpoint-up(lg) {
+            flex-direction: row;
+        }
+
+        margin: 0;
+        &-title {
+            font-size: 60px;
+            @include media-breakpoint-down(lg) {
+                font-size: 40px;
+            }
+        }
+        &-body {
+            @include media-breakpoint-up(lg) {
+                flex: 0 0 50%;
+                max-width: 50%;
+                padding: 2rem;
+            }
+            @include media-breakpoint-between(md, lg) {
+                padding: 1.5rem;
+            }
+            padding: 1rem;
         }
     }
 }
