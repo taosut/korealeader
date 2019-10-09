@@ -669,6 +669,41 @@ svg {
     }
 }
 
+.card-form {
+    .card-title {
+        font-family: "SFU Helvetica", "Helvetica Neue", sans-serif;
+        font-size: 50px;
+        text-transform: uppercase;
+        @include media-breakpoint-down(md) {
+            font-size: 36px;
+        }
+    }
+    p {
+        font-size: 24px;
+        text-align: center;
+        @include media-breakpoint-down(md) {
+            font-size: 18px;
+        }
+    }
+    label {
+        font-weight: bold;
+    }
+    .form-control {
+        border-color: #BDD1E4;
+    }
+    .btn {
+        color: $white;
+        background-color: $orange;
+        width: 100%;
+    }
+    .card-body {
+        padding: 2.5rem 2.25rem;
+        @include media-breakpoint-down(md) {
+            padding: 1.5rem;
+        }
+    }
+}
+
 .contact {
     position: relative;
     background:
@@ -917,7 +952,6 @@ svg {
     }
 }
 
-
 @include media-breakpoint-up(md) {
     .summary {
         p.collapse {
@@ -1031,13 +1065,24 @@ svg {
     }
 }
 
-.introduction {
+.content-block {
+    .container-fluid {
+        max-width: 1200px;
+    }
+}
+
+.bg-lg-gray-100 {
     @include media-breakpoint-up(lg) {
         background: $gray-100;
     }
-    .container-fluid {
-        max-width: 1200px;
+}
 
+.bg-gray-100 {
+    background: $gray-100;
+}
+
+.introduction {
+    .container-fluid {
         .tab-content>.tab-pane {
             background: $white;
             @include media-breakpoint-up(lg) {
@@ -1144,5 +1189,97 @@ svg {
             }
             padding: 1rem;
         }
+    }
+}
+
+.container-contact {
+    &-block {
+        padding: 2rem 1rem;
+        @include media-breakpoint-up(md) {
+            margin-top: -68px;
+            position: relative;
+            z-index: 1000;
+        }
+        @include media-breakpoint-down(md) {
+            padding: 2rem 0;
+        }
+
+        .card {
+            &-title, &-text {
+                font-family: "Helvetica Neue", sans-serif;
+                font-size: 20px;
+                margin-bottom: .5rem;
+                line-height: 1.2;
+                text-align: center;
+            }
+            svg {
+                margin: auto;
+                width: 100px;
+            }
+        }
+        .card-form {
+            border-radius: 10px;
+            .card-title {
+                font-family: "SFU Helvetica", "Helvetica Neue", sans-serif;
+                font-size: 50px;
+                text-transform: uppercase;
+                @include media-breakpoint-down(md) {
+                    font-size: 36px;
+                }
+            }
+            p {
+                font-size: 24px;
+                font-weight: 200;
+                text-align: center;
+                @include media-breakpoint-down(md) {
+                    font-size: 18px;
+                }
+            }
+        }
+    }
+}
+
+.font-normal {
+    font-weight: normal;
+}
+
+.contact-top {
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 30px;
+    text-transform: uppercase;
+
+    @include media-breakpoint-up(xl) {
+        bottom: -50px;
+    }
+    @include media-breakpoint-between(md, xl) {
+        bottom: -20px;
+    }
+    @include media-breakpoint-down(md) {
+        position: relative;
+        right: 0;
+        left: 0;
+        bottom: unset;
+        font-size: 20px;
+    }
+    img {
+        max-width: 100%;
+        @include media-breakpoint-up(xl) {
+            width: 400px;
+        }
+        @include media-breakpoint-between(lg, xl) {
+            width: 300px;
+        }
+        @include media-breakpoint-between(md, lg) {
+            width: 250px;
+        }
+    }
+}
+
+.embed-lg-responsive-21by9::before {
+    @include media-breakpoint-up(lg) {
+        padding-top: 42.857143%;
     }
 }

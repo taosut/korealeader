@@ -1104,6 +1104,53 @@ svg {
   }
 }
 
+.card-form .card-title {
+  font-family: "SFU Helvetica", "Helvetica Neue", sans-serif;
+  font-size: 50px;
+  text-transform: uppercase;
+}
+
+@media (max-width: 991.98px) {
+  .card-form .card-title {
+    font-size: 36px;
+  }
+}
+
+.card-form p {
+  font-size: 24px;
+  text-align: center;
+}
+
+@media (max-width: 991.98px) {
+  .card-form p {
+    font-size: 18px;
+  }
+}
+
+.card-form label {
+  font-weight: bold;
+}
+
+.card-form .form-control {
+  border-color: #BDD1E4;
+}
+
+.card-form .btn {
+  color: #ffffff;
+  background-color: #F36E2E;
+  width: 100%;
+}
+
+.card-form .card-body {
+  padding: 2.5rem 2.25rem;
+}
+
+@media (max-width: 991.98px) {
+  .card-form .card-body {
+    padding: 1.5rem;
+  }
+}
+
 .contact {
   position: relative;
   background: url(../assets/8-background.png) no-repeat center bottom, url(../assets/lady.png) no-repeat right 8rem bottom 300px, -webkit-gradient(linear, left top, left bottom, color-stop(3%, #ffffff), color-stop(97%, #D2E5F9));
@@ -1569,14 +1616,18 @@ svg {
   background: rgba(0, 36, 59, 0.21);
 }
 
+.content-block .container-fluid {
+  max-width: 1200px;
+}
+
 @media (min-width: 992px) {
-  .introduction {
+  .bg-lg-gray-100 {
     background: #f8f9fa;
   }
 }
 
-.introduction .container-fluid {
-  max-width: 1200px;
+.bg-gray-100 {
+  background: #f8f9fa;
 }
 
 .introduction .container-fluid .tab-content > .tab-pane {
@@ -1718,6 +1769,133 @@ svg {
 @media (min-width: 768px) and (max-width: 1199.98px) {
   .doctor-block .card-body {
     padding: 1.5rem;
+  }
+}
+
+.container-contact-block {
+  padding: 2rem 1rem;
+}
+
+@media (min-width: 768px) {
+  .container-contact-block {
+    margin-top: -68px;
+    position: relative;
+    z-index: 1000;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .container-contact-block {
+    padding: 2rem 0;
+  }
+}
+
+.container-contact-block .card-title, .container-contact-block .card-text {
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 20px;
+  margin-bottom: .5rem;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.container-contact-block .card svg {
+  margin: auto;
+  width: 100px;
+}
+
+.container-contact-block .card-form {
+  border-radius: 10px;
+}
+
+.container-contact-block .card-form .card-title {
+  font-family: "SFU Helvetica", "Helvetica Neue", sans-serif;
+  font-size: 50px;
+  text-transform: uppercase;
+}
+
+@media (max-width: 991.98px) {
+  .container-contact-block .card-form .card-title {
+    font-size: 36px;
+  }
+}
+
+.container-contact-block .card-form p {
+  font-size: 24px;
+  font-weight: 200;
+  text-align: center;
+}
+
+@media (max-width: 991.98px) {
+  .container-contact-block .card-form p {
+    font-size: 18px;
+  }
+}
+
+.font-normal {
+  font-weight: normal;
+}
+
+.contact-top {
+  bottom: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  font-size: 30px;
+  text-transform: uppercase;
+}
+
+@media (min-width: 1200px) {
+  .contact-top {
+    bottom: -50px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1439.98px) {
+  .contact-top {
+    bottom: -20px;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .contact-top {
+    position: relative;
+    right: 0;
+    left: 0;
+    bottom: unset;
+    font-size: 20px;
+  }
+}
+
+.contact-top img {
+  max-width: 100%;
+}
+
+@media (min-width: 1200px) {
+  .contact-top img {
+    width: 400px;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1439.98px) {
+  .contact-top img {
+    width: 300px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1199.98px) {
+  .contact-top img {
+    width: 250px;
+  }
+}
+
+@media (min-width: 992px) {
+  .embed-lg-responsive-21by9::before {
+    padding-top: 42.857143%;
   }
 }
 /*# sourceMappingURL=app.css.map */
