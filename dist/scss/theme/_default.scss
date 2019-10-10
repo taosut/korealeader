@@ -425,12 +425,11 @@ svg {
     }
 }
 .btn-orange {
-    color: $white;
+    color: $white !important;
     background-color: $orange;
-    padding: .75rem;
     font-weight: bold;
     &:hover, &:active {
-        color: $white;
+        color: $white !important;
         background-color: $orange-dark;
     }
 }
@@ -861,6 +860,12 @@ svg {
     color: rgba($color: #000000, $alpha: .21)!important;
 }
 
+.font-white {
+    ::placeholder {
+        color: rgba($color: #000000, $alpha: .51)!important;
+    }
+}
+
 .list-unstyled {
     padding-left: 0;
     list-style: none; 
@@ -1079,7 +1084,7 @@ svg {
     }
 }
 .carousel-doctor {
-    background: url(../assets/11-background.jpg) no-repeat center center;
+    background: url(../assets/11-background.svg) no-repeat center center;
     background-size: cover;
     .carousel-caption {
         position: relative;
@@ -1178,6 +1183,168 @@ svg {
         color: $main;
         &:hover, &:active {
             text-decoration: none;
+        }
+    }
+}
+
+.card-row {
+    flex-direction: row !important;
+}
+
+.card-md-row {
+    @include media-breakpoint-up(md) {
+        flex-direction: row !important;
+    }
+}
+
+.card-round {
+    border-radius: 20px !important;
+    & > .card-img-top{
+        border-radius: 20px 20px 0 0 !important;
+    }
+    & > .card-body{
+        border-radius: 20px 20px !important;
+    }
+}
+.card-border {
+    border: 1px solid $gray-200;
+}
+
+.card-body {
+    @include media-breakpoint-down(md) {
+        padding: 1rem;
+    }
+}
+.card-banner {
+    & > .card-caption {
+        @include media-breakpoint-up(md) {
+            position: absolute;
+            width: 50%;
+            left: 10%;
+            z-index: 10;
+        }
+        @include media-breakpoint-up(xxl) {
+            top: 20%;
+        }
+        @include media-breakpoint-between(xl, xxl) {
+            top: 15%;
+            left: 7%;
+        }
+        @include media-breakpoint-between(lg, xl) {
+            top: 10%;
+        }
+        @include media-breakpoint-down(lg) {
+            top: 5%;
+            left: 5%;
+        }
+        .card-title {
+            @include media-breakpoint-up(xl) {
+                font-size: 80px;
+            }
+            @include media-breakpoint-between(lg, xl) {
+                font-size: 60px;
+            }
+            @include media-breakpoint-between(md, lg) {
+                font-size: 30px;
+            }
+            color: $blue;
+        }
+        .card-text {
+            @include media-breakpoint-up(xl) {
+                font-size: 30px;
+            }
+            @include media-breakpoint-between(lg, xl) {
+                font-size: 24px;
+            }
+            @include media-breakpoint-between(md, lg) {
+                font-size: 18px;
+            }
+        }
+    }
+    .carousel-control-prev,
+    .carousel-control-next {
+        width: 80px;
+        &:not(.carousel-control-next) {
+            @include media-breakpoint-up(lg) {
+                left: -60px;
+            }
+            @include media-breakpoint-down(lg) {
+                left: -30px;
+            }
+        }
+        &:not(.carousel-control-prev) {
+            @include media-breakpoint-up(lg) {
+                right: -60px;
+            }
+            @include media-breakpoint-down(lg) {
+                right: -30px;
+            }
+        }
+    }
+
+    @include media-breakpoint-down(md) {
+        .carousel {
+            padding-top: 1rem;
+            border-top: 1px solid $gray-200;
+        }
+    }
+}
+
+.card-post-list {
+    @include media-breakpoint-down(xl) {
+        flex-flow: column wrap;
+    }
+    .card-post {
+        margin-bottom: 1rem !important;
+    }
+}
+.card-post {
+    .card-title {
+        font-size: 16px;
+        letter-spacing: .05px;
+        @include media-breakpoint-up(xl) {
+            font-size: 36px;
+        }
+        @include media-breakpoint-between(md, xl) {
+            font-size: 32px;
+        }
+    }
+    .card-text {
+        @include media-breakpoint-up(xl) {
+            font-size: 20px;
+        }
+        @include media-breakpoint-between(md, xl) {
+            font-size: 18px;
+        }
+    }
+    .card-body {
+        flex: 0 0 66.67%;
+        max-width: 66.67%;
+        @include media-breakpoint-up(xl) {
+        }
+        @include media-breakpoint-between(lg, xl) {
+            flex: 0 0 66.67%;
+            max-width: 66.67%;
+        }
+        @include media-breakpoint-between(md, lg) {
+            flex: 0 0 70%;
+            max-width: 70%;
+        }
+    }
+}
+
+.card-lady {
+    margin-top: 4.5rem;
+    position: relative;
+    .lady {
+        position: absolute;
+        bottom: 0;
+        right: 2.25rem;
+        @include media-breakpoint-up(lg) {
+            width: 320px;
+        }
+        @include media-breakpoint-down(lg) {
+            display: none;
         }
     }
 }
@@ -1306,5 +1473,23 @@ svg {
 .embed-lg-responsive-21by9::before {
     @include media-breakpoint-up(lg) {
         padding-top: 42.857143%;
+    }
+}
+
+.bg-mix-1 {
+    background: url(../assets/15-background.svg) no-repeat center top;
+    background-size: cover;
+    @include media-breakpoint-down(md) {
+        background-position: left -250px top;
+    }
+}
+
+.surgery-contact {
+    &-image {
+        @include media-breakpoint-up(md) {
+            margin-top: -100px;
+        }
+        margin-top: -50px;
+        width: 100%;
     }
 }

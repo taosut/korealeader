@@ -791,14 +791,13 @@ svg {
 }
 
 .btn-orange {
-  color: #ffffff;
+  color: #ffffff !important;
   background-color: #F36E2E;
-  padding: .75rem;
   font-weight: bold;
 }
 
 .btn-orange:hover, .btn-orange:active {
-  color: #ffffff;
+  color: #ffffff !important;
   background-color: #e26328;
 }
 
@@ -1364,6 +1363,22 @@ svg {
   color: rgba(0, 0, 0, 0.21) !important;
 }
 
+.font-white ::-webkit-input-placeholder {
+  color: rgba(0, 0, 0, 0.51) !important;
+}
+
+.font-white :-ms-input-placeholder {
+  color: rgba(0, 0, 0, 0.51) !important;
+}
+
+.font-white ::-ms-input-placeholder {
+  color: rgba(0, 0, 0, 0.51) !important;
+}
+
+.font-white ::placeholder {
+  color: rgba(0, 0, 0, 0.51) !important;
+}
+
 .list-unstyled {
   padding-left: 0;
   list-style: none;
@@ -1623,7 +1638,7 @@ svg {
 }
 
 .carousel-doctor {
-  background: url(../assets/11-background.jpg) no-repeat center center;
+  background: url(../assets/11-background.svg) no-repeat center center;
   background-size: cover;
 }
 
@@ -1734,6 +1749,249 @@ svg {
 
 .card a:hover, .card a:active {
   text-decoration: none;
+}
+
+.card-row {
+  -webkit-box-orient: horizontal !important;
+  -webkit-box-direction: normal !important;
+      -ms-flex-direction: row !important;
+          flex-direction: row !important;
+}
+
+@media (min-width: 768px) {
+  .card-md-row {
+    -webkit-box-orient: horizontal !important;
+    -webkit-box-direction: normal !important;
+        -ms-flex-direction: row !important;
+            flex-direction: row !important;
+  }
+}
+
+.card-round {
+  border-radius: 20px !important;
+}
+
+.card-round > .card-img-top {
+  border-radius: 20px 20px 0 0 !important;
+}
+
+.card-round > .card-body {
+  border-radius: 20px 20px !important;
+}
+
+.card-border {
+  border: 1px solid #e9ecef;
+}
+
+@media (max-width: 991.98px) {
+  .card-body {
+    padding: 1rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .card-banner > .card-caption {
+    position: absolute;
+    width: 50%;
+    left: 10%;
+    z-index: 10;
+  }
+}
+
+@media (min-width: 1440px) {
+  .card-banner > .card-caption {
+    top: 20%;
+  }
+}
+
+@media (min-width: 1200px) and (max-width: 1619.98px) {
+  .card-banner > .card-caption {
+    top: 15%;
+    left: 7%;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1439.98px) {
+  .card-banner > .card-caption {
+    top: 10%;
+  }
+}
+
+@media (max-width: 1199.98px) {
+  .card-banner > .card-caption {
+    top: 5%;
+    left: 5%;
+  }
+}
+
+.card-banner > .card-caption .card-title {
+  color: #4F8ECB;
+}
+
+@media (min-width: 1200px) {
+  .card-banner > .card-caption .card-title {
+    font-size: 80px;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1439.98px) {
+  .card-banner > .card-caption .card-title {
+    font-size: 60px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1199.98px) {
+  .card-banner > .card-caption .card-title {
+    font-size: 30px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .card-banner > .card-caption .card-text {
+    font-size: 30px;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1439.98px) {
+  .card-banner > .card-caption .card-text {
+    font-size: 24px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1199.98px) {
+  .card-banner > .card-caption .card-text {
+    font-size: 18px;
+  }
+}
+
+.card-banner .carousel-control-prev,
+.card-banner .carousel-control-next {
+  width: 80px;
+}
+
+@media (min-width: 992px) {
+  .card-banner .carousel-control-prev:not(.carousel-control-next),
+  .card-banner .carousel-control-next:not(.carousel-control-next) {
+    left: -60px;
+  }
+}
+
+@media (max-width: 1199.98px) {
+  .card-banner .carousel-control-prev:not(.carousel-control-next),
+  .card-banner .carousel-control-next:not(.carousel-control-next) {
+    left: -30px;
+  }
+}
+
+@media (min-width: 992px) {
+  .card-banner .carousel-control-prev:not(.carousel-control-prev),
+  .card-banner .carousel-control-next:not(.carousel-control-prev) {
+    right: -60px;
+  }
+}
+
+@media (max-width: 1199.98px) {
+  .card-banner .carousel-control-prev:not(.carousel-control-prev),
+  .card-banner .carousel-control-next:not(.carousel-control-prev) {
+    right: -30px;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .card-banner .carousel {
+    padding-top: 1rem;
+    border-top: 1px solid #e9ecef;
+  }
+}
+
+@media (max-width: 1439.98px) {
+  .card-post-list {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column wrap;
+            flex-flow: column wrap;
+  }
+}
+
+.card-post-list .card-post {
+  margin-bottom: 1rem !important;
+}
+
+.card-post .card-title {
+  font-size: 16px;
+  letter-spacing: .05px;
+}
+
+@media (min-width: 1200px) {
+  .card-post .card-title {
+    font-size: 36px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1439.98px) {
+  .card-post .card-title {
+    font-size: 32px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .card-post .card-text {
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1439.98px) {
+  .card-post .card-text {
+    font-size: 18px;
+  }
+}
+
+.card-post .card-body {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 66.67%;
+          flex: 0 0 66.67%;
+  max-width: 66.67%;
+}
+
+@media (min-width: 992px) and (max-width: 1439.98px) {
+  .card-post .card-body {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 66.67%;
+            flex: 0 0 66.67%;
+    max-width: 66.67%;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1199.98px) {
+  .card-post .card-body {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 70%;
+            flex: 0 0 70%;
+    max-width: 70%;
+  }
+}
+
+.card-lady {
+  margin-top: 4.5rem;
+  position: relative;
+}
+
+.card-lady .lady {
+  position: absolute;
+  bottom: 0;
+  right: 2.25rem;
+}
+
+@media (min-width: 992px) {
+  .card-lady .lady {
+    width: 320px;
+  }
+}
+
+@media (max-width: 1199.98px) {
+  .card-lady .lady {
+    display: none;
+  }
 }
 
 .doctor-block {
@@ -1915,6 +2173,28 @@ svg {
 @media (min-width: 992px) {
   .embed-lg-responsive-21by9::before {
     padding-top: 42.857143%;
+  }
+}
+
+.bg-mix-1 {
+  background: url(../assets/15-background.svg) no-repeat center top;
+  background-size: cover;
+}
+
+@media (max-width: 991.98px) {
+  .bg-mix-1 {
+    background-position: left -250px top;
+  }
+}
+
+.surgery-contact-image {
+  margin-top: -50px;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .surgery-contact-image {
+    margin-top: -100px;
   }
 }
 /*# sourceMappingURL=app.css.map */
