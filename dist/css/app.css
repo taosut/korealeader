@@ -1789,6 +1789,10 @@ svg {
   }
 }
 
+.card-text {
+  line-height: 1.2;
+}
+
 @media (min-width: 768px) {
   .card-banner > .card-caption {
     position: absolute;

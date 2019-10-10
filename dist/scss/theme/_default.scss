@@ -1215,6 +1215,9 @@ svg {
         padding: 1rem;
     }
 }
+.card-text {
+    line-height: 1.2;
+}
 .card-banner {
     & > .card-caption {
         @include media-breakpoint-up(md) {
