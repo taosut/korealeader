@@ -1053,6 +1053,31 @@ svg {
     }
 }
 
+.carousel-vertical {
+
+    .carousel-item-next:not(.carousel-item-left),
+    .active.carousel-item-right {
+    transform: translateY(-100%);
+    }
+
+    .carousel-item-prev:not(.carousel-item-right),
+    .active.carousel-item-left {
+    transform: translateY(100%);
+    }
+
+    // .carousel-item-next.carousel-item-left,
+    // .carousel-item-prev.carousel-item-right {
+    //     transform: translate3d(0, 0, 0) !important;
+    // }
+}
+.doctors-carousel {
+    @include media-breakpoint-up(md) {
+        .carousel-control-prev,
+        .carousel-control-next {
+            display: none;
+        }
+    }
+}
 .carousel-doctor {
     background: url(../assets/11-background.jpg) no-repeat center center;
     background-size: cover;

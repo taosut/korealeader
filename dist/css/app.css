@@ -1603,6 +1603,25 @@ svg {
   }
 }
 
+.carousel-vertical .carousel-item-next:not(.carousel-item-left),
+.carousel-vertical .active.carousel-item-right {
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
+}
+
+.carousel-vertical .carousel-item-prev:not(.carousel-item-right),
+.carousel-vertical .active.carousel-item-left {
+  -webkit-transform: translateY(100%);
+          transform: translateY(100%);
+}
+
+@media (min-width: 768px) {
+  .doctors-carousel .carousel-control-prev,
+  .doctors-carousel .carousel-control-next {
+    display: none;
+  }
+}
+
 .carousel-doctor {
   background: url(../assets/11-background.jpg) no-repeat center center;
   background-size: cover;
