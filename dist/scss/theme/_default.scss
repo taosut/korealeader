@@ -1303,10 +1303,10 @@ svg {
 }
 .card-post {
     .card-title {
-        font-size: 16px;
+        font-size: 36px;
         letter-spacing: .05px;
         @include media-breakpoint-up(xl) {
-            font-size: 36px;
+            font-size: 34px;
         }
         @include media-breakpoint-between(md, xl) {
             font-size: 32px;
@@ -1494,5 +1494,21 @@ svg {
         }
         margin-top: -50px;
         width: 100%;
+    }
+}
+
+.nav-light {
+    background: $gray-200;
+    .nav-link {
+        padding: 1rem 1rem;
+        color: $main;
+        @include media-breakpoint-down(md) {
+            padding: .75rem .75rem;
+        }
+        text-transform: uppercase;
+        &.active, &:hover, &:active {
+            color: $white;
+            background: $main;
+        }
     }
 }

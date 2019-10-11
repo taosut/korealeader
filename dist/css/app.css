@@ -1922,13 +1922,13 @@ svg {
 }
 
 .card-post .card-title {
-  font-size: 16px;
+  font-size: 36px;
   letter-spacing: .05px;
 }
 
 @media (min-width: 1200px) {
   .card-post .card-title {
-    font-size: 36px;
+    font-size: 34px;
   }
 }
 
@@ -2200,5 +2200,26 @@ svg {
   .surgery-contact-image {
     margin-top: -100px;
   }
+}
+
+.nav-light {
+  background: #e9ecef;
+}
+
+.nav-light .nav-link {
+  padding: 1rem 1rem;
+  color: #00243B;
+  text-transform: uppercase;
+}
+
+@media (max-width: 991.98px) {
+  .nav-light .nav-link {
+    padding: .75rem .75rem;
+  }
+}
+
+.nav-light .nav-link.active, .nav-light .nav-link:hover, .nav-light .nav-link:active {
+  color: #ffffff;
+  background: #00243B;
 }
 /*# sourceMappingURL=app.css.map */
