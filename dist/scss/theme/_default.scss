@@ -68,6 +68,9 @@ svg {
         @include media-breakpoint-between(lg, xl) {
             padding: 1.15rem 1rem;
         }
+        @include media-breakpoint-between(md, lg) {
+            padding: 1.15rem .5rem;
+        }
         @include media-breakpoint-down(md) {
             text-align: center;
         }
@@ -1094,10 +1097,188 @@ svg {
         background: rgba($color: $main, $alpha: .21);
     }
 }
-
+.carousel-height-300 {
+    .carousel-item img {
+        min-height: 300px;
+        object-fit: cover;
+        object-position: top;
+    }
+}
 .content-block {
     .container-fluid {
         max-width: 1200px;
+    }
+}
+
+.card-mask {
+    .card-body {
+        z-index: 10;
+        color: $white;
+    }
+    .card-img-top {
+        z-index: 1;
+        object-fit: cover;
+        object-position: top;
+    }
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 2;
+        background: linear-gradient(180deg, transparent 30%, rgba($color: #000000, $alpha: .5) 70%);
+    }
+}
+
+.card-news {
+    &.card {
+        @include media-breakpoint-up(md) {
+            margin-bottom: 30px;
+        }
+    }
+    &.main {
+        .card-img-top {
+            @include media-breakpoint-up(xxl) {
+                height: 830px;
+            }
+            @include media-breakpoint-between(md, xxl) {
+                height: 630px;
+            }
+            @include media-breakpoint-down(xs) {
+                height: 430px;
+            }
+        }
+        .card-body {
+            padding: 2rem;
+            @include media-breakpoint-up(xxl) {
+                font-size: 30px;
+                svg {
+                    width: 28px;
+                    height: 28px;
+                }
+            }
+            @include media-breakpoint-between(xl, xxl) {
+                font-size: 24px;
+                svg {
+                    width: 22px;
+                    height: 22px;
+                }
+            }
+            @include media-breakpoint-down(lg) {
+                font-size: 20px;
+                padding: 1.5rem;
+                svg {
+                    width: 18px;
+                    height: 18px;
+                }
+            }
+        }
+    }
+    &.sub {
+        .card-img-top {
+            @include media-breakpoint-up(xxl) {
+                height: 400px;
+            }
+            @include media-breakpoint-between(lg, xxl) {
+                height: 300px;
+            }
+            @include media-breakpoint-down(md) {
+                height: 250px;
+            }
+        }
+    }
+    .card-body {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+    }
+}
+
+.card-video {
+    &.card {
+        @include media-breakpoint-up(md) {
+            margin-bottom: 30px;
+        }
+    }
+    &.main {
+        .card-img-top {
+            @include media-breakpoint-up(xxl) {
+                height: 630px;
+            }
+            @include media-breakpoint-between(lg, xxl) {
+                height: 530px;
+            }
+            @include media-breakpoint-between(md, lg) {
+                height: 450px;
+            }
+            @include media-breakpoint-down(xs) {
+                height: 250px;
+            }
+        }
+        .card-body {
+            @include media-breakpoint-up(md) {
+                padding: 2rem;
+            }
+            @include media-breakpoint-up(xxl) {
+                font-size: 30px;
+                svg {
+                    width: 28px;
+                    height: 28px;
+                }
+            }
+            @include media-breakpoint-between(xl, xxl) {
+                font-size: 24px;
+                svg {
+                    width: 22px;
+                    height: 22px;
+                }
+            }
+            @include media-breakpoint-between(md, xl) {
+                font-size: 20px;
+                padding: 1.5rem;
+                svg {
+                    width: 18px;
+                    height: 18px;
+                }
+            }
+        }
+    }
+    &.sub {
+        .card-img-top {
+            @include media-breakpoint-up(xxl) {
+                height: 300px;
+            }
+            @include media-breakpoint-between(lg, xxl) {
+                height: 250px;
+            }
+            @include media-breakpoint-down(md) {
+                height: 250px;
+            }
+        }
+    }
+    .card-body {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: url(../assets/icon-play.svg) no-repeat center center, linear-gradient(180deg, transparent 30%, rgba($color: #000000, $alpha: .5) 70%);
+        background-size: 125px, 100%;
+        @include media-breakpoint-down(xs) {
+            background-size: 70px, 100%;
+        }
+    }
+    &.sub::after {
+        background-size: 70px;
     }
 }
 
@@ -1510,5 +1691,31 @@ svg {
             color: $white;
             background: $main;
         }
+    }
+}
+
+.rotate180 {
+    transform: rotate(180deg);
+}
+
+.pagination {
+    .page-link {
+        font-size: 20px;
+        padding: 1rem 1.5rem;
+        font-weight: 500;
+        border: 0;
+        color: $main;
+        &:hover, &:active {
+            color: $white;
+            background-color: $main;
+        }
+        svg {
+            width: 18px;
+            height: 20px;
+        }
+    }
+    .page-item.active .page-link  {
+        color: $white;
+        background-color: $main;
     }
 }
