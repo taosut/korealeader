@@ -1905,6 +1905,10 @@ svg {
   background: #f8f9fa;
 }
 
+.bg-gray-200 {
+  background: #e9ecef;
+}
+
 .introduction .container-fluid .tab-content > .tab-pane {
   background: #ffffff;
 }
@@ -2527,6 +2531,15 @@ svg {
   border-bottom-left-radius: 0;
 }
 
+.list-group-item-underline::after {
+  content: '';
+  position: absolute;
+  width: 225px;
+  left: 0;
+  border-bottom: 4px solid #4F8ECB;
+  bottom: 0;
+}
+
 .title-caption {
   font-family: "SFU Helvetica", "Helvetica Neue", sans-serif;
   letter-spacing: .05rem;
@@ -2544,6 +2557,19 @@ svg {
   }
 }
 
+.title-caption-two {
+  font-family: "SFU Helvetica", "Helvetica Neue", sans-serif;
+  letter-spacing: .05rem;
+  line-height: 1.2;
+  font-size: 30px;
+}
+
+@media (max-width: 1199.98px) {
+  .title-caption-two {
+    font-size: 24px;
+  }
+}
+
 a:hover, a:active {
   text-decoration: none;
 }
@@ -2553,6 +2579,17 @@ a:hover, a:active {
   width: 100px;
   -o-object-fit: cover;
      object-fit: cover;
+  -o-object-position: top;
+     object-position: top;
+}
+
+.wh-60 {
+  height: 60px;
+  width: 60px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: top;
+     object-position: top;
 }
 
 .font-bold {
@@ -2560,6 +2597,18 @@ a:hover, a:active {
 }
 
 .media-center {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.flex-center {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;

@@ -1296,6 +1296,9 @@ svg {
 .bg-gray-100 {
     background: $gray-100;
 }
+.bg-gray-200 {
+    background: $gray-200;
+}
 
 .introduction {
     .container-fluid {
@@ -1754,6 +1757,17 @@ svg {
         }
     }
 }
+
+.list-group-item-underline {
+    &::after {
+        content: '';
+        position: absolute;
+        width: 225px;
+        left: 0;
+        border-bottom: 4px solid $blue;
+        bottom: 0;
+    }
+}
 .title-caption {
     font-family: "SFU Helvetica", "Helvetica Neue", sans-serif;
     letter-spacing: .05rem;
@@ -1767,6 +1781,15 @@ svg {
         font-size: 24px;
     }
 }
+.title-caption-two {
+    font-family: "SFU Helvetica", "Helvetica Neue", sans-serif;
+    letter-spacing: .05rem;
+    line-height: 1.2;
+    font-size: 30px;
+    @include media-breakpoint-down(lg) {
+        font-size: 24px;
+    }
+}
 a {
     &:hover, &:active {
         text-decoration: none;
@@ -1776,10 +1799,22 @@ a {
     height: 100px;
     width: 100px;
     object-fit: cover;
+    object-position: top;
+}
+.wh-60 {
+    height: 60px;
+    width: 60px;
+    object-fit: cover;
+    object-position: top;
 }
 .font-bold {
     font-weight: bold;
 }
 .media-center {
+    align-items: center;
+}
+.flex-center {
+    display: flex;
+    justify-content: space-between;
     align-items: center;
 }
