@@ -534,6 +534,31 @@ svg {
   font-weight: 200;
 }
 
+@media (min-width: 1440px) {
+  .title-xl {
+    font-size: 130px;
+    line-height: 1;
+  }
+}
+
+@media (min-width: 1200px) and (max-width: 1619.98px) {
+  .title-xl {
+    font-size: 100px;
+    line-height: 1;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1439.98px) {
+  .title-xl {
+    font-size: 70px;
+    line-height: 1;
+  }
+}
+
+.text {
+  font-size: 20px;
+}
+
 .services {
   background: url(../assets/3-background.jpg);
   background-size: 100%;
@@ -764,18 +789,42 @@ svg {
   }
 }
 
-.block .title {
+.block .title, .block .block-title {
+  font-family: "SFU Helvetica", "Helvetica Neue", sans-serif;
+  font-size: 50px;
+  padding: 2.5rem 0 .75rem;
+  text-align: center;
   line-height: 1.5;
-  padding-bottom: .75rem;
 }
 
-.block .title span {
+@media (max-width: 1439.98px) {
+  .block .title, .block .block-title {
+    font-size: 44px;
+    padding: 2rem 0;
+  }
+}
+
+@media (max-width: 1199.98px) {
+  .block .title, .block .block-title {
+    font-size: 36px;
+    padding: 1.5rem 0;
+  }
+}
+
+.block .title span, .block .block-title span {
   display: block;
   font-size: 55%;
   font-family: "Helvetica Neue", "SFU Helvetica", sans-serif;
   text-transform: capitalize;
   font-weight: 400;
   color: #00243B;
+}
+
+@media (max-width: 1439.98px) {
+  .block .block-title-lg {
+    font-size: 130px;
+    line-height: 1;
+  }
 }
 
 .block .action {
@@ -795,6 +844,10 @@ svg {
     width: 80%;
     margin: auto;
   }
+}
+
+.block .block-text {
+  font-size: 20px;
 }
 
 .btn-orange {
@@ -1614,14 +1667,68 @@ svg {
   }
 }
 
-.carousel-caption p {
+.carousel-caption p:not(.text) {
   font-size: 30px;
   font-weight: 100;
 }
 
 @media (max-width: 991.98px) {
-  .carousel-caption p {
+  .carousel-caption p:not(.text) {
     font-size: 20px;
+  }
+}
+
+.carousel-caption-left {
+  position: relative;
+  width: 100%;
+  left: 0;
+  right: 0;
+  bottom: unset;
+}
+
+@media (min-width: 768px) {
+  .carousel-caption-left {
+    position: absolute;
+    z-index: 10;
+  }
+}
+
+@media (min-width: 1440px) {
+  .carousel-caption-left {
+    top: 15%;
+    width: 35%;
+    left: 15%;
+  }
+}
+
+@media (min-width: 1200px) and (max-width: 1619.98px) {
+  .carousel-caption-left {
+    top: 10%;
+    width: 40%;
+    left: 10%;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1439.98px) {
+  .carousel-caption-left {
+    top: 10%;
+    width: 35%;
+    left: 15%;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1199.98px) {
+  .carousel-caption-left {
+    top: 8%;
+    left: 10%;
+    width: 40%;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .carousel-caption-left {
+    padding-left: 15px;
+    padding-right: 15px;
   }
 }
 
@@ -2243,6 +2350,20 @@ svg {
   }
 }
 
+@media (min-width: 992px) {
+  .card-columns-four {
+    -webkit-column-count: 4;
+            column-count: 4;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1199.98px) {
+  .card-columns-four {
+    -webkit-column-count: 3;
+            column-count: 3;
+  }
+}
+
 .doctor-block {
   padding: 0;
   position: relative;
@@ -2612,5 +2733,30 @@ a:hover, a:active {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+@media (min-width: 1440px) {
+  .story .card-title {
+    font-size: 30px;
+  }
+}
+
+.h-120 {
+  height: 120px;
+}
+
+.h-60 {
+  height: 60px;
+}
+
+.img-right {
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: right !important;
+     object-position: right !important;
+}
+
+.rounded-xl {
+  border-radius: 1.5rem !important;
 }
 /*# sourceMappingURL=app.css.map */
