@@ -2749,6 +2749,10 @@ a:hover, a:active {
   height: 60px;
 }
 
+.h-90 {
+  height: 90px;
+}
+
 .img-right {
   -o-object-fit: cover;
      object-fit: cover;
@@ -2758,5 +2762,43 @@ a:hover, a:active {
 
 .rounded-xl {
   border-radius: 1.5rem !important;
+}
+
+@media (max-width: 991.98px) {
+  .btn-group-nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+.btn-group-nav .btn {
+  font-family: "SFU Helvetica", "Helvetica Neue", sans-serif;
+  letter-spacing: .05rem;
+  font-size: 20px;
+  border-radius: 0;
+  border: 1px solid #00243B;
+  background-color: #ffffff;
+  color: #00243B;
+  margin-bottom: -1px;
+}
+
+@media (min-width: 992px) {
+  .btn-group-nav .btn {
+    padding: .75rem 2.5rem;
+  }
+}
+
+.btn-group-nav .btn:first-child {
+  margin-left: -1px;
+}
+
+.btn-group-nav .btn.active, .btn-group-nav .btn:hover, .btn-group-nav .btn:active {
+  background-color: #00243B;
+  color: #ffffff;
 }
 /*# sourceMappingURL=app.css.map */
