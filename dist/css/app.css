@@ -209,6 +209,10 @@ body {
   color: #D2E5F9;
 }
 
+.font-blue-dark {
+  color: #5395d4;
+}
+
 .font-purple {
   color: #9460A8;
 }
@@ -1036,8 +1040,14 @@ svg {
   border-radius: 0;
 }
 
-.story .carousel-control-next-icon,
-.story .carousel-control-prev-icon {
+@media (min-width: 1440px) {
+  .story .card-title {
+    font-size: 30px;
+  }
+}
+
+.story .carousel-control-next-icon:not(.not-margin),
+.story .carousel-control-prev-icon:not(.not-margin) {
   margin-top: -280px;
 }
 
@@ -2260,6 +2270,39 @@ svg {
   }
 }
 
+.card-banner2 .carousel-control-prev,
+.card-banner2 .carousel-control-next {
+  width: 80px;
+}
+
+@media (min-width: 992px) {
+  .card-banner2 .carousel-control-prev:not(.carousel-control-next),
+  .card-banner2 .carousel-control-next:not(.carousel-control-next) {
+    left: -40px;
+  }
+}
+
+@media (max-width: 1199.98px) {
+  .card-banner2 .carousel-control-prev:not(.carousel-control-next),
+  .card-banner2 .carousel-control-next:not(.carousel-control-next) {
+    left: -10px;
+  }
+}
+
+@media (min-width: 992px) {
+  .card-banner2 .carousel-control-prev:not(.carousel-control-prev),
+  .card-banner2 .carousel-control-next:not(.carousel-control-prev) {
+    right: -40px;
+  }
+}
+
+@media (max-width: 1199.98px) {
+  .card-banner2 .carousel-control-prev:not(.carousel-control-prev),
+  .card-banner2 .carousel-control-next:not(.carousel-control-prev) {
+    right: -10px;
+  }
+}
+
 @media (max-width: 1439.98px) {
   .card-post-list {
     -webkit-box-orient: vertical;
@@ -2735,12 +2778,6 @@ a:hover, a:active {
           align-items: center;
 }
 
-@media (min-width: 1440px) {
-  .story .card-title {
-    font-size: 30px;
-  }
-}
-
 .h-120 {
   height: 120px;
 }
@@ -2800,5 +2837,40 @@ a:hover, a:active {
 .btn-group-nav .btn.active, .btn-group-nav .btn:hover, .btn-group-nav .btn:active {
   background-color: #00243B;
   color: #ffffff;
+}
+
+.btn-group-cirle .btn {
+  border-radius: 50px !important;
+}
+
+.btn-group-spacing .btn {
+  margin: 0 2rem;
+}
+
+.btn-group-carousel-action {
+  margin-top: -2rem;
+}
+
+.btn-group-carousel-action .btn {
+  min-width: 120px;
+}
+
+@media (max-width: 991.98px) {
+  .btn-group-carousel-action {
+    display: block;
+  }
+  .btn-group-carousel-action .btn {
+    display: inline-block;
+    margin-bottom: 1rem;
+  }
+}
+
+.btn-blue {
+  background-color: #4F8ECB;
+  color: #ffffff;
+}
+
+.btn-blue:hover, .btn-blue:active {
+  background-color: #D2E5F9;
 }
 /*# sourceMappingURL=app.css.map */

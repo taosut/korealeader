@@ -609,8 +609,14 @@ svg {
             }
         }
     }
-    .carousel-control-next-icon,
-    .carousel-control-prev-icon {
+
+    .card-title {
+        @include media-breakpoint-up(xxl) {
+            font-size: 30px;
+        }
+    }
+    .carousel-control-next-icon:not(.not-margin),
+    .carousel-control-prev-icon:not(.not-margin) {
         margin-top: -280px;
     }
 }
@@ -1557,6 +1563,29 @@ svg {
     }
 }
 
+.card-banner2 {
+    .carousel-control-prev,
+    .carousel-control-next {
+        width: 80px;
+        &:not(.carousel-control-next) {
+            @include media-breakpoint-up(lg) {
+                left: -40px;
+            }
+            @include media-breakpoint-down(lg) {
+                left: -10px;
+            }
+        }
+        &:not(.carousel-control-prev) {
+            @include media-breakpoint-up(lg) {
+                right: -40px;
+            }
+            @include media-breakpoint-down(lg) {
+                right: -10px;
+            }
+        }
+    }
+}
+
 .card-post-list {
     @include media-breakpoint-down(xl) {
         flex-flow: column wrap;
@@ -1900,15 +1929,6 @@ a {
     justify-content: space-between;
     align-items: center;
 }
-
-.story {
-    .card-title {
-        @include media-breakpoint-up(xxl) {
-            font-size: 30px;
-        }
-    }
-}
-
 .h-120 {
     height: 120px;
 }
@@ -1953,5 +1973,38 @@ a {
             background-color: $main;
             color: $white;
         }
+    }
+}
+
+.btn-group-cirle {
+    .btn {
+        border-radius: 50px !important;
+    }
+}
+.btn-group-spacing {
+    .btn {
+        margin: 0 2rem;
+    }
+}
+.btn-group-carousel-action {
+    margin-top: -2rem;
+    .btn {
+        min-width: 120px;
+    }
+    @include media-breakpoint-down(md) {
+        .btn {
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+        display: block;
+        // margin-top: 2rem;
+    }
+}
+
+.btn-blue {
+    background-color: $blue;
+    color: $white;
+    &:hover, &:active {
+        background-color: $blue-light;
     }
 }
