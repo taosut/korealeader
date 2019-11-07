@@ -897,6 +897,41 @@ svg {
   }
 }
 
+.doctors-carousel-scroll {
+  overflow: auto;
+  /* Make an auto-hiding scroller for the 3 people using a IE */
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+  /* Remove the default scrollbar for WebKit implementations */
+}
+
+.doctors-carousel-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .doctors-carousel-scroll {
+    height: 800px;
+  }
+}
+
+@media (min-width: 992px) {
+  .doctors-carousel-scroll {
+    height: 450px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .doctors-carousel-scroll {
+    height: 600px;
+  }
+}
+
+@media (min-width: 1620px) {
+  .doctors-carousel-scroll {
+    height: 750px;
+  }
+}
+
 .doctors .list-group-item {
   margin: 1rem 0;
   padding: 1.75rem;

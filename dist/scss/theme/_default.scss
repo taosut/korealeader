@@ -503,6 +503,27 @@ svg {
             background: $gray-300;
         }
     }
+    &-carousel-scroll {
+        overflow: auto;
+        /* Make an auto-hiding scroller for the 3 people using a IE */
+        -ms-overflow-style: -ms-autohiding-scrollbar;
+        /* Remove the default scrollbar for WebKit implementations */
+        &::-webkit-scrollbar {
+            display: none;
+        }
+        @include media-breakpoint-up(md) {
+            height: 800px;
+        }
+        @include media-breakpoint-up(lg) {
+            height: 450px;
+        }
+        @include media-breakpoint-up(xl) {
+            height: 600px;
+        }
+        @include media-breakpoint-up(xxxl) {
+            height: 750px;
+        }
+    }
     .list-group {
         &-item {
             margin: 1rem 0;
